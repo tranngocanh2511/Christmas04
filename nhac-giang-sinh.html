@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 Bài Thánh Ca Giáng Sinh Vui Tươi Cho Thiếu Nhi Công Giáo | Nghe Trực Tiếp</title>
+  <meta name="description" content="Trang nghe thử 10 bài nhạc thánh ca Giáng Sinh Công giáo vui tươi, rộn ràng, thích hợp làm nhạc nền cho website lớp học thiếu nhi. Bấm Play là nghe trực tiếp ngay từng dòng!">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#d97706',
+              amber: '#f59e0b',
+              lightAmber: '#fef3c7',
+              red: '#dc2626',
+              pine: '#15803d',
+              cream: '#fffbeb',
+              sky: '#0284c7'
+            }
+          },
+          fontFamily: {
+            kids: ['"Nunito"', 'system-ui', 'sans-serif'],
+            heading: ['"Comfortaa"', 'cursive'],
+            display: ['"Playfair Display"', 'Georgia', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* Custom animations & subtle styling */
+    @keyframes pulseSoft {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+      50% { transform: scale(1.04); box-shadow: 0 0 16px 4px rgba(245, 158, 11, 0.3); }
+    }
+    .playing-pulse {
+      animation: pulseSoft 2s infinite ease-in-out;
+    }
+
+    @keyframes barDance {
+      0%, 100% { height: 4px; }
+      50% { height: 18px; }
+    }
+    .bar-1 { animation: barDance 0.8s infinite ease-in-out 0.1s; }
+    .bar-2 { animation: barDance 0.8s infinite ease-in-out 0.3s; }
+    .bar-3 { animation: barDance 0.8s infinite ease-in-out 0.2s; }
+    .bar-4 { animation: barDance 0.8s infinite ease-in-out 0.4s; }
+
+    /* Custom range slider */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: #e2e8f0;
+      border-radius: 9999px;
+      height: 6px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #d97706;
+      cursor: pointer;
+      border: 2px solid white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      transition: transform 0.1s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fef3c7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #f59e0b;
+      border-radius: 9999px;
+    }
+  </style>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎄</text></svg>">
+</head>
+
+<body class="bg-gradient-to-b from-amber-50/60 via-red-50/30 to-sky-50 text-slate-800 font-kids min-h-screen relative pb-40">
+
+  <!-- Interactive Snowflake Background Canvas -->
+  <canvas id="snow-canvas" class="fixed inset-0 pointer-events-none z-0 w-full h-full opacity-60"></canvas>
+
+  <!-- HEADER -->
+  <header class="relative z-10 sticky top-0 backdrop-blur-md bg-white/90 border-b border-amber-200/80 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 py-3.5 flex items-center justify-between">
+      
+      <!-- Brand & Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center text-white text-xl shadow-md">
+          <span>⭐</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-base sm:text-lg font-black text-amber-950 uppercase tracking-tight">Thánh Ca Giáng Sinh Cho Thiếu Nhi</h1>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-100 text-amber-900 border border-amber-300">Công Giáo</span>
+          </div>
+          <p class="text-xs text-slate-600 font-bold">10 bài nhạc nền vui tươi chọn lọc cho website lớp học</p>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-black bg-amber-500 hover:bg-amber-400 text-slate-950 shadow transition-transform hover:scale-105">
+          <span>🎄</span>
+          <span>Về Trang Chính Website</span>
+        </a>
+        <a href="#huong-dan" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-black bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 transition">
+          <i class="fa-solid fa-code text-amber-700"></i>
+          <span class="hidden sm:inline">Cách gắn vào web</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-6">
+
+    <!-- INTRO BANNER -->
+    <div class="mb-6 p-6 rounded-3xl bg-gradient-to-r from-amber-500 via-amber-600 to-red-600 text-white shadow-xl relative overflow-hidden">
+      <!-- Decorative background stars -->
+      <div class="absolute -right-8 -top-8 text-8xl opacity-10 pointer-events-none">🎄</div>
+      
+      <div class="max-w-3xl relative z-10">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-black mb-3">
+          <span>🎶</span>
+          <span>BẤM PLAY NGHE TRỰC TIẾP NGAY TRÊN TRANG</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black mb-2 leading-snug">
+          Gợi Ý 10 Bản Nhạc Giáng Sinh Thích Hợp Cho Website Lớp Học
+        </h2>
+        <p class="text-xs sm:text-sm text-amber-50 font-bold leading-relaxed mb-4">
+          Mỗi dòng bên dưới hiển thị 1 bài nhạc. Bạn chỉ cần <strong class="text-yellow-200 underline">bấm nút Play</strong> là nghe được ngay mà không cần mở tab mới hay click sang bất kỳ link nào khác. Mỗi bài đều có nút <span class="bg-white/20 px-1.5 py-0.5 rounded font-mono text-[11px]">Copy Mã Nhúng</span> để bạn chèn thẳng vào website lớp học!
+        </p>
+        
+        <!-- Feature Highlights -->
+        <div class="flex flex-wrap items-center gap-2 text-xs font-bold text-amber-100">
+          <span class="bg-black/20 px-3 py-1 rounded-full flex items-center gap-1.5">
+            <i class="fa-solid fa-check text-yellow-300"></i> Đúng không khí Công giáo
+          </span>
+          <span class="bg-black/20 px-3 py-1 rounded-full flex items-center gap-1.5">
+            <i class="fa-solid fa-check text-yellow-300"></i> Giai điệu vui tươi, các bé yêu thích
+          </span>
+          <span class="bg-black/20 px-3 py-1 rounded-full flex items-center gap-1.5">
+            <i class="fa-solid fa-check text-yellow-300"></i> Miễn phí bản quyền, dùng làm nhạc nền web rất tốt
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTER & SEARCH BAR -->
+    <div class="mb-5 flex flex-col sm:flex-row items-center justify-between gap-3 bg-white p-3.5 rounded-2xl border border-amber-200 shadow-sm">
+      
+      <!-- Filter buttons -->
+      <div class="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 text-xs font-black">
+        <button onclick="setFilter('all')" id="filter-all" class="filter-btn active px-3.5 py-1.5 rounded-full bg-amber-500 text-slate-950 font-black shadow-sm transition">
+          Tất Cả (10 Bài)
+        </button>
+        <button onclick="setFilter('upbeat')" id="filter-upbeat" class="filter-btn px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-amber-100 text-slate-700 transition">
+          ⚡ Rộn Ràng & Vui Tươi
+        </button>
+        <button onclick="setFilter('gentle')" id="filter-gentle" class="filter-btn px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-amber-100 text-slate-700 transition">
+          🕊️ Dịu Êm & Bình An
+        </button>
+      </div>
+
+      <!-- Search Input -->
+      <div class="relative w-full sm:w-64">
+        <input type="text" id="search-input" oninput="searchSongs(this.value)" placeholder="Tìm bài hát, tác giả..." 
+               class="w-full pl-9 pr-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-bold focus:outline-none focus:border-amber-500 transition">
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+      </div>
+
+    </div>
+
+    <!-- 10 SONGS LIST (EACH ROW = 1 SONG) -->
+    <div id="songs-list" class="space-y-3 mb-12">
+      <!-- Songs rendered dynamically here -->
+    </div>
+
+    <!-- INTEGRATION GUIDE ACCORDION / BOX -->
+    <section id="huong-dan" class="mb-14 p-6 sm:p-8 rounded-3xl bg-white border-2 border-amber-300 shadow-lg">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-2xl bg-amber-500 text-white flex items-center justify-center font-black text-lg">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <div>
+          <h3 class="text-lg sm:text-xl font-black text-slate-900">Cách Chèn Nhạc Nền Tự Động Vào Website Lớp Học</h3>
+          <p class="text-xs text-slate-500 font-bold">Dán đoạn mã dưới đây vào file HTML website của bạn để các bé vừa vào là có nhạc nhẹ nhàng</p>
+        </div>
+      </div>
+
+      <!-- Code Box -->
+      <div class="relative rounded-2xl bg-slate-900 text-amber-200 p-4 sm:p-5 font-mono text-xs overflow-x-auto border border-slate-800 mb-4">
+        <button onclick="copyEmbedCode(this)" class="absolute top-3 right-3 px-3 py-1 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-sans font-black text-xs transition flex items-center gap-1.5 shadow">
+          <i class="fa-regular fa-copy"></i>
+          <span>Copy Đoạn Mã Này</span>
+        </button>
+        <pre><code id="embed-code-block">&lt;!-- 1. Thẻ âm thanh phát nhạc nền lặp lại --&gt;
+&lt;audio id="bg-sacred-music" loop preload="auto"&gt;
+  &lt;source id="sacred-audio-src" src="https://commons.wikimedia.org/wiki/Special:FilePath/Joy_To_The_World.ogg" type="audio/ogg"&gt;
+&lt;/audio&gt;
+
+&lt;!-- 2. Nút Bật/Tắt nhạc cho các bé &amp; phụ huynh tự do điều khiển --&gt;
+&lt;button id="toggle-music-btn" onclick="toggleClassMusic()" style="position:fixed;bottom:20px;right:20px;z-index:99;padding:10px 16px;border-radius:50px;background:#d97706;color:white;font-weight:bold;border:none;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.25);"&gt;
+  🎵 Bật Nhạc Thánh Ca
+&lt;/button&gt;
+
+&lt;script&gt;
+  const audio = document.getElementById('bg-sacred-music');
+  const btn = document.getElementById('toggle-music-btn');
+  audio.volume = 0.3; // Âm lượng 30% dịu êm cho lớp học
+
+  function toggleClassMusic() {
+    if (audio.paused) {
+      audio.play().then(() => {
+        btn.innerHTML = '⏸ Tắt Nhạc Thánh Ca';
+        btn.style.background = '#15803d'; // Đổi màu xanh lá
+      }).catch(err => console.log('Chờ người dùng tương tác chạm để phát âm thanh:', err));
+    } else {
+      audio.pause();
+      btn.innerHTML = '🎵 Bật Nhạc Thánh Ca';
+      btn.style.background = '#d97706';
+    }
+  }
+
+  // Tự động phát khi bé chạm vào trang lần đầu (vượt qua chính sách autoplay của trình duyệt)
+  window.addEventListener('click', function autoPlayOnce() {
+    if (audio.paused) {
+      audio.play().then(() => {
+        btn.innerHTML = '⏸ Tắt Nhạc Thánh Ca';
+        btn.style.background = '#15803d';
+      }).catch(() => {});
+    }
+    window.removeEventListener('click', autoPlayOnce);
+  }, { once: true });
+&lt;/script&gt;</code></pre>
+      </div>
+
+      <!-- Important Tip Box -->
+      <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs sm:text-[13px] text-amber-950 font-bold space-y-2">
+        <p class="flex items-center gap-2 text-amber-800">
+          <i class="fa-solid fa-lightbulb text-amber-600 text-base"></i>
+          <span><strong>Mẹo quan trọng cho website trẻ em:</strong></span>
+        </p>
+        <p class="text-slate-700 font-semibold leading-relaxed">
+          Hiện nay các trình duyệt (Chrome, Safari trên iPad/iPhone, máy tính) luôn chặn âm thanh tự động phát khi vừa mở web nếu người dùng chưa chạm vào màn hình. Vì vậy, việc đặt một <strong>nút Bật/Tắt nhạc xinh xắn ở góc màn hình</strong> (hoặc tự động phát ngay khi bé nhấp chuột/chạm lần đầu vào màn hình như đoạn mã trên) là cách chuẩn mực nhất để đảm bảo nhạc luôn phát mượt mà 100%!
+        </p>
+      </div>
+
+      <!-- Vietnamese Catholic Carols Section -->
+      <div class="mt-6 pt-5 border-t border-amber-200">
+        <h4 class="text-sm font-black text-slate-800 mb-2 flex items-center gap-2">
+          <span>🇻🇳</span>
+          <span>Gợi ý thêm 2 bài Thánh Ca Giáng Sinh Việt Nam kinh điển cho thiếu nhi:</span>
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-2xl bg-red-50/60 border border-red-200">
+            <strong class="text-red-900 block text-sm font-black mb-1">1. Hang Bê-lem (Hải Linh & Minh Châu)</strong>
+            <p class="text-slate-700 leading-relaxed font-semibold">
+              <em>“Đêm đông lạnh lẽo Chúa sinh ra đời, nằm trong hang đá nơi máng lừa...”</em> - Bài thánh ca thân thương nhất của mọi lớp giáo lý thiếu nhi Việt Nam. Tiết tấu rộn rã, dễ thuộc, hát theo say mê.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-amber-50/60 border border-amber-200">
+            <strong class="text-amber-900 block text-sm font-black mb-1">2. Cao Cung Lên (Lm. Hoài Đức & Lm. Nguyễn Khắc Xuyên)</strong>
+            <p class="text-slate-700 leading-relaxed font-semibold">
+              <em>“Cao cung lên khúc nhạc thiên thần Chúa... U minh qua rồi tới mùa ánh sáng...”</em> - Điệu nhạc du dương, bay bổng, tràn ngập ánh sáng Giáng sinh chiếu soi tâm hồn trẻ thơ.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-6 border-t border-amber-200 text-slate-500 text-xs font-bold">
+      <p class="mb-1">Tuyển Tập 10 Bài Nhạc Thánh Ca Giáng Sinh Công Giáo Cho Thiếu Nhi</p>
+      <p class="text-[11px] text-slate-400">Thiết kế đơn giản, mỗi dòng 1 bài, bấm Play là nghe trực tiếp tức thì • Chúc lớp học có mùa Giáng Sinh an lành!</p>
+    </footer>
+
+  </main>
+
+  <!-- BOTTOM FLOATING MINI-PLAYER (ACTIVE WHEN A SONG IS PLAYING) -->
+  <div id="sticky-player" class="fixed bottom-0 inset-x-0 z-40 bg-slate-900/95 backdrop-blur-xl border-t-2 border-amber-400 text-white px-4 py-3 shadow-2xl transition-all duration-300 translate-y-full">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      
+      <!-- Current Song Info -->
+      <div class="flex items-center gap-3 w-full sm:w-auto">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center text-slate-950 font-black text-sm flex-shrink-0 shadow">
+          <i class="fa-solid fa-music"></i>
+        </div>
+        <div class="min-w-0 flex-1 sm:w-60">
+          <div class="flex items-center gap-2">
+            <span id="dock-badge" class="px-1.5 py-0.2 rounded text-[10px] font-black bg-amber-400 text-slate-950 uppercase">Bài 01</span>
+            <span id="dock-vibe" class="text-[11px] text-amber-300 font-bold truncate">Rộn ràng</span>
+          </div>
+          <h4 id="dock-title" class="text-sm font-black text-white truncate">Joy to the World</h4>
+          <p id="dock-sub" class="text-[11px] text-slate-400 truncate">Phước Cho Nhân Loại • G.F. Händel</p>
+        </div>
+      </div>
+
+      <!-- Playback Controls & Progress Bar -->
+      <div class="flex flex-col items-center gap-1.5 w-full sm:w-1/2">
+        <div class="flex items-center gap-4">
+          <!-- Prev Button -->
+          <button onclick="playPrev()" class="text-slate-400 hover:text-white transition active:scale-95" title="Bài trước">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+
+          <!-- Main Play/Pause Button -->
+          <button id="dock-play-btn" onclick="toggleCurrentPlay()" class="w-10 h-10 rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 text-slate-950 flex items-center justify-center font-black shadow-md hover:scale-105 active:scale-95 transition">
+            <i id="dock-play-icon" class="fa-solid fa-play ml-0.5"></i>
+          </button>
+
+          <!-- Next Button -->
+          <button onclick="playNext()" class="text-slate-400 hover:text-white transition active:scale-95" title="Bài kế tiếp">
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
+
+          <!-- Loop Toggle Button -->
+          <button id="dock-loop-btn" onclick="toggleLoop()" class="text-slate-400 hover:text-amber-400 text-xs flex items-center gap-1 px-2 py-1 rounded-lg border border-slate-700 transition" title="Lặp lại bài này (Thử cảm giác phát lặp làm nhạc nền web)">
+            <i class="fa-solid fa-repeat"></i>
+            <span id="dock-loop-label" class="hidden xs:inline">Lặp lại</span>
+          </button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="flex items-center gap-2 w-full text-[11px] text-slate-400 font-mono">
+          <span id="dock-current-time">00:00</span>
+          <input type="range" id="dock-progress" min="0" max="100" value="0" oninput="seekAudio(this.value)" class="flex-1 accent-amber-400 cursor-pointer">
+          <span id="dock-duration">00:00</span>
+        </div>
+      </div>
+
+      <!-- Volume & Copy Shortcut -->
+      <div class="hidden sm:flex items-center gap-3">
+        <div class="flex items-center gap-2">
+          <i id="dock-vol-icon" class="fa-solid fa-volume-high text-amber-400 text-xs"></i>
+          <input type="range" min="0" max="1" step="0.05" value="0.75" oninput="setGlobalVolume(this.value)" class="w-20 accent-amber-400 cursor-pointer">
+        </div>
+        <button onclick="copyCurrentSongCode()" class="px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition flex items-center gap-1.5 shadow" title="Lấy mã nhúng bài đang nghe">
+          <i class="fa-solid fa-code"></i>
+          <span>Lấy Mã Bài Này</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-black shadow-2xl border border-amber-400 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2">
+    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+    <span id="toast-text">Đã sao chép!</span>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    /**
+     * 10 SELECTED CATHOLIC CHRISTMAS SONGS
+     * Direct high-fidelity streaming audio files (Ogg & MP3 from Wikimedia Commons)
+     * All direct endpoints verified 200 OK.
+     */
+    const SONGS = [
+      {
+        id: 1,
+        title: "Joy to the World",
+        vnTitle: "Phước Cho Nhân Loại / Niềm Vui Hoan Ca",
+        composer: "G.F. Händel & Isaac Watts",
+        vibeType: "upbeat",
+        vibeText: "Hân hoan • Rộn rã tột bậc",
+        badge: "Rộn Ràng Nhất ⭐",
+        badgeColor: "bg-amber-100 text-amber-900 border-amber-300",
+        audioSrc: "https://commons.wikimedia.org/wiki/Special:FilePath/Joy_To_The_World.ogg",
+        format: "audio/ogg",
+        desc: "Bản thánh ca Giáng Sinh hân hoan kinh điển nhất nhân loại. Tiết tấu dồn dập, tươi sáng báo tin Chúa Cứu Thế ra đời, cực kỳ thích hợp làm nhạc nền mở đầu website lớp học."
+      },
+      {
+        id: 2,
+        title: "Angels We Have Heard on High",
+        vnTitle: "Tiếng Hát Thiên Thần / Điệp Khúc Gloria",
+        composer: "Thánh ca truyền thống Pháp",
+        vibeType: "upbeat",
+        vibeText: "Rực rỡ • Ngân nga Gloria",
+        badge: "Điệp Khúc Thiên Thần 👼",
+        badgeColor: "bg-red-100 text-red-900 border-red-300",
+        audioSrc: "https://commons.wikimedia.org/wiki/Special:FilePath/Angels_We_Have_Heard_on_High_(ISRC_USUAN1100329).mp3",
+        format: "audio/mpeg",
+        desc: "Khúc ca các thiên thần báo tin vui cho mục đồng. Điệp khúc ngân vang 'Gloria in excelsis Deo' các bé thiếu nhi Công giáo rất say mê hát theo."
+      },
+      {
+        id: 3,
+        title: "Hark! The Herald Angels Sing",
+        vnTitle: "Nghe Thiên Thần Hát Mừng Chúa Ra Đời",
+        composer: "Felix Mendelssohn & Charles Wesley",
+        vibeType: "upbeat",
+        vibeText: "Hành khúc • Tươi sáng • Oai nghiêm",
+        badge: "Hành Khúc Vui Tươi ✨",
+        badgeColor: "bg-sky-100 text-sky-900 border-sky-300",
+        audioSrc: "https://commons.wikimedia.org/wiki/Special:FilePath/HWW_Hark_The_Herald.ogg",
+        format: "audio/ogg",
+        desc: "Điệu hành khúc của nhà soạn nhạc lừng danh Mendelssohn. Giai điệu tự tin, mang niềm hy vọng và ánh sáng cứu độ, đánh thức sự háo hức trong tâm hồn các bé."
+      },
+      {
+        id: 4,
+        title: "The First Noel",
+        vnTitle: "Bài Ca Đêm Thánh Đầu Tiên",
+        composer: "Thánh ca Giáng sinh truyền thống Anh (TK 18)",
+        vibeType: "upbeat",
+        vibeText: "Tiếng chuông • Rộn rã • Kể chuyện",
+        badge: "Giai Điệu Thân Thương 🔔",
+        badgeColor: "bg-emerald-100 text-emerald-900 border-emerald-300",
+        audioSrc: "https://commons.wikimedia.org/wiki/Special:FilePath/The_First_Noel_(2020)_-_Starlifter_and_Roots_in_Blue_-_United_States_Air_Force_Band_of_Mid-America.mp3",
+        format: "audio/mpeg",
+        desc: "Kể lại đêm Con Chúa giáng sinh khi các mục đồng trông thấy ngôi sao lạ phương Đông dẫn đường. Bản thu hòa tấu vui tươi, thích hợp cho các hoạt động kể chuyện Giáng sinh."
+      },
+      {
+        id: 5,
+        title: "Go Tell It on the Mountain",
+        vnTitle: "Hãy Đi Loan Truyền Trên Núi Đồi",
+        composer: "John Wesley Work Jr.",
+        vibeType: "upbeat",
+        vibeText: "Sôi nổi • Nhún nhảy • Loan tin mừng",
+        badge: "Năng Động Tuổi Thơ 🏔️",
+        badgeColor: "bg-purple-100 text-purple-900 border-purple-300",
+        audioSrc: "https://commons.wikimedia.org/wiki/Special:FilePath/Go_Tell_It_on_the_Mountain_-_Diplomats_-_United_States_Air_Force_Band.mp3",
+        format: "audio/mpeg",
+        desc: "Giai điệu truyền giáo cực kỳ sôi động: 'Hãy đi loan báo trên khắp đồi núi rằng Chúa Giêsu đã sinh ra!'. Tiết tấu tươi vui khiến các bé không thể ngồi yên, thích hợp cho phần trò chơi đố vui."
+      },
+      {
+        id: 6,
+        title: "O Come, All Ye Faithful (Adeste Fideles)",
+        vnTitle: "Mau Đến Bê-lem Chiêm Ngắm Chúa",
+        composer: "John Francis Wade (1751)",
+        vibeType: "gentle",
+        vibeText: "Sốt mến • Bước chân hành hương",
+        badge: "Lời Mời Yêu Thương 🌟",
+        badgeColor: "bg-amber-100 text-amber-900 border-amber-300",
+        audioSrc: "https://commons.wikimedia.org/wiki/Special:FilePath/HWW_Oh_Come_All_Ye_Faithful.ogg",
+        format: "audio/ogg",
+        desc: "Lời rủ nhau tha thiết: 'Hỡi các tín hữu, nào mau cùng nhau đến Bêlem quỳ chiêm ngắm Vua các Thiên Thần!'. Nhịp điệu trang trọng nhưng tràn ngập ấm áp tình Chúa."
+      },
+      {
+        id: 7,
+        title: "Away in a Manger",
+        vnTitle: "Trong Máng Cỏ Xinh",
+        composer: "James R. Murray (1887)",
+        vibeType: "gentle",
+        vibeText: "Êm ái • Dịu dàng • Lời hát ru",
+        badge: "Ngọt Ngào Cho Bé 🕊️",
+        badgeColor: "bg-pink-100 text-pink-900 border-pink-300",
+        audioSrc: "https://commons.wikimedia.org/wiki/Special:FilePath/Away_in_a_Manger.ogg",
+        format: "audio/ogg",
+        desc: "Bản thánh ca êm dịu nhất dành cho thiếu nhi: mô tả Chúa Hài Đồng nằm ngủ ngoan trong máng cỏ ấm êm. Rất thích hợp làm nhạc nền góc cầu nguyện hoặc đọc kinh của các bé."
+      },
+      {
+        id: 8,
+        title: "Deck the Halls",
+        vnTitle: "Rộn Ràng Mừng Mùa Noel Đến",
+        composer: "Dân ca xứ Wales cổ truyền",
+        vibeType: "upbeat",
+        vibeText: "Fa-la-la-la-la • Vui tươi • Lễ hội",
+        badge: "Háo Hức Đón Mừng 🎁",
+        badgeColor: "bg-green-100 text-green-900 border-green-300",
+        audioSrc: "https://commons.wikimedia.org/wiki/Special:FilePath/Deck_the_Halls_(USAFB_Concert_Band).ogg",
+        format: "audio/ogg",
+        desc: "Điệp khúc 'Fa-la-la-la-la' tưng bừng rộn rã gắn liền với việc chuẩn bị hang đá, trang hoàng nhà thờ và lớp học đón lễ Giáng sinh."
+      },
+      {
+        id: 9,
+        title: "Jingle Bells (Bản Hòa Tấu Chuông Ngân)",
+        vnTitle: "Tiếng Chuông Giáo Đường Vui Say",
+        composer: "James Lord Pierpont",
+        vibeType: "upbeat",
+        vibeText: "Chuông leng keng • Quen thuộc • Hào hứng",
+        badge: "Bé Nào Cũng Mê 🔔",
+        badgeColor: "bg-yellow-100 text-yellow-900 border-yellow-300",
+        audioSrc: "https://commons.wikimedia.org/wiki/Special:FilePath/Jingle_Bells_Or_The_One_Horse_Open_Sleigh_Complete.ogg",
+        format: "audio/ogg",
+        desc: "Bản hòa tấu tiếng chuông leng keng rộn rã nhất hành tinh. Vừa bật lên là tạo ngay bầu không khí Giáng sinh ngập tràn tiếng cười cho trẻ em."
+      },
+      {
+        id: 10,
+        title: "Silent Night (Stille Nacht)",
+        vnTitle: "Đêm Thánh Vô Cùng",
+        composer: "Franz Xaver Gruber & Joseph Mohr (1818)",
+        vibeType: "gentle",
+        vibeText: "Linh thiêng • Sâu lắng • Bình an",
+        badge: "Bất Hủ Mọi Thời Đại 🕯️",
+        badgeColor: "bg-indigo-100 text-indigo-900 border-indigo-300",
+        audioSrc: "https://commons.wikimedia.org/wiki/Special:FilePath/Silent_Night.ogg",
+        format: "audio/ogg",
+        desc: "Bản thánh ca linh thiêng số 1 của Đêm Giáng Sinh. Giai điệu dịu dàng tôn vinh phút giây Đấng Cứu Độ chào đời. Thích hợp cho giờ tĩnh tâm thắp nến và cầu nguyện của lớp học."
+      }
+    ];
+
+    // Single master HTML5 Audio instance
+    const audio = new Audio();
+    audio.preload = 'auto';
+    audio.volume = 0.75;
+
+    let currentSongIndex = -1;
+    let isLooping = false;
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    // DOM Elements
+    const stickyPlayer = document.getElementById('sticky-player');
+    const dockPlayBtn = document.getElementById('dock-play-btn');
+    const dockPlayIcon = document.getElementById('dock-play-icon');
+    const dockProgress = document.getElementById('dock-progress');
+    const dockCurrentTime = document.getElementById('dock-current-time');
+    const dockDuration = document.getElementById('dock-duration');
+    const dockTitle = document.getElementById('dock-title');
+    const dockSub = document.getElementById('dock-sub');
+    const dockBadge = document.getElementById('dock-badge');
+    const dockVibe = document.getElementById('dock-vibe');
+    const dockLoopBtn = document.getElementById('dock-loop-btn');
+
+    /**
+     * RENDER SONGS LIST
+     * Simple row layout: Each row is 1 song
+     */
+    function renderSongs() {
+      const container = document.getElementById('songs-list');
+      const filtered = SONGS.filter(song => {
+        if (currentFilter !== 'all' && song.vibeType !== currentFilter) return false;
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          return song.title.toLowerCase().includes(q) || 
+                 song.vnTitle.toLowerCase().includes(q) || 
+                 song.composer.toLowerCase().includes(q) ||
+                 song.desc.toLowerCase().includes(q);
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 bg-white rounded-3xl border border-dashed border-amber-300">
+            <span class="text-3xl">🔍</span>
+            <p class="font-bold text-slate-700 mt-2 text-sm">Không tìm thấy bài thánh ca nào phù hợp!</p>
+            <p class="text-xs text-slate-500 mt-1">Hãy thử xóa bộ lọc hoặc tìm từ khóa khác</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(song => {
+        const isCurrentPlaying = (currentSongIndex === (song.id - 1)) && !audio.paused;
+        const isSelected = (currentSongIndex === (song.id - 1));
+
+        return `
+          <div id="song-row-${song.id}" 
+               class="song-row bg-white rounded-2xl p-4 sm:p-5 border-2 transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm hover:shadow-md ${isCurrentPlaying ? 'border-amber-400 bg-amber-50/40 ring-2 ring-amber-300/40' : (isSelected ? 'border-amber-300' : 'border-slate-200/80 hover:border-amber-300')}">
+            
+            <!-- Left Info Section: Number + Big Play Button + Title -->
+            <div class="flex items-start sm:items-center gap-3.5 flex-1 min-w-0">
+              
+              <!-- Song Index Number -->
+              <span class="w-8 h-8 rounded-xl bg-slate-100 text-slate-600 font-black text-xs flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
+                ${song.id < 10 ? '0' + song.id : song.id}
+              </span>
+
+              <!-- Big Direct Play Button -->
+              <button onclick="playSong(${song.id})" 
+                      class="row-play-btn w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-md active:scale-95 transition-all duration-200 ${isCurrentPlaying ? 'bg-amber-500 text-slate-950 playing-pulse' : 'bg-amber-500 hover:bg-amber-400 text-slate-950'}"
+                      title="${isCurrentPlaying ? 'Tạm dừng bài hát' : 'Bấm nghe ngay lập tức'}">
+                <i class="row-play-icon fa-solid ${isCurrentPlaying ? 'fa-pause' : 'fa-play ml-0.5'} text-lg"></i>
+              </button>
+
+              <!-- Equalizer animation when playing -->
+              <div class="eq-container ${isCurrentPlaying ? 'flex' : 'hidden'} items-end gap-0.5 h-6 px-1 flex-shrink-0">
+                <span class="w-1 bg-amber-500 rounded-full bar-1"></span>
+                <span class="w-1 bg-amber-400 rounded-full bar-2"></span>
+                <span class="w-1 bg-yellow-400 rounded-full bar-3"></span>
+                <span class="w-1 bg-amber-600 rounded-full bar-4"></span>
+              </div>
+
+              <!-- Song Details -->
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-2 flex-wrap mb-0.5">
+                  <h3 class="text-base sm:text-lg font-black text-slate-900 truncate">
+                    ${song.title}
+                  </h3>
+                  <span class="text-xs font-bold text-amber-700 font-mono">(${song.vnTitle})</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-black border uppercase tracking-wider ${song.badgeColor}">
+                    ${song.badge}
+                  </span>
+                </div>
+                
+                <p class="text-xs text-slate-500 font-semibold mb-1">
+                  Tác giả: <strong class="text-slate-700">${song.composer}</strong> • 
+                  <span class="text-amber-800">${song.vibeText}</span>
+                </p>
+
+                <!-- Short description why it fits kids / website -->
+                <p class="text-xs text-slate-600 leading-relaxed font-normal line-clamp-2 md:line-clamp-none">
+                  💡 ${song.desc}
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Right Action Section: Inline Progress / Time (if active) + Copy URL Button -->
+            <div class="flex items-center gap-2.5 self-end md:self-center flex-shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100 w-full md:w-auto justify-between md:justify-end">
+              
+              <!-- Quick Play Status Text -->
+              <span class="text-xs font-bold ${isCurrentPlaying ? 'text-emerald-700' : 'text-slate-400'} flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full ${isCurrentPlaying ? 'bg-emerald-500 animate-ping' : 'bg-slate-300'}"></span>
+                <span>${isCurrentPlaying ? 'Đang phát...' : 'Nhấp Play để nghe'}</span>
+              </span>
+
+              <!-- Copy Audio Tag for this Song -->
+              <button onclick="copySingleSongCode(${song.id}, this)" 
+                      class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-amber-100 text-slate-700 hover:text-amber-950 font-bold text-xs transition border border-slate-200 flex items-center gap-1.5"
+                      title="Lấy mã nhúng & đường link file âm thanh bài này">
+                <i class="fa-solid fa-code text-amber-600"></i>
+                <span class="hidden sm:inline">Lấy Mã Bài Này</span>
+              </button>
+
+            </div>
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    /**
+     * PLAY / PAUSE LOGIC
+     */
+    function playSong(id) {
+      const index = id - 1;
+      
+      // If clicking current song
+      if (currentSongIndex === index) {
+        if (!audio.paused) {
+          audio.pause();
+        } else {
+          audio.play();
+        }
+        return;
+      }
+
+      // If switching to new song
+      currentSongIndex = index;
+      const song = SONGS[currentSongIndex];
+      audio.src = song.audioSrc;
+      audio.load();
+      audio.play().catch(err => {
+        console.log('Play blocked by browser, user needs to click: ', err);
+      });
+
+      // Update sticky bottom player metadata
+      dockTitle.innerText = song.title;
+      dockSub.innerText = `${song.vnTitle} • ${song.composer}`;
+      dockBadge.innerText = `Bài ${song.id < 10 ? '0' + song.id : song.id}`;
+      dockVibe.innerText = song.vibeText;
+
+      // Reveal sticky player
+      stickyPlayer.classList.remove('translate-y-full');
+    }
+
+    function toggleCurrentPlay() {
+      if (currentSongIndex === -1) {
+        playSong(1);
+        return;
+      }
+      if (!audio.paused) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
+    }
+
+    function playNext() {
+      if (currentSongIndex === -1) {
+        playSong(1);
+        return;
+      }
+      const nextId = (currentSongIndex + 1) % SONGS.length + 1;
+      playSong(nextId);
+    }
+
+    function playPrev() {
+      if (currentSongIndex === -1) {
+        playSong(SONGS.length);
+        return;
+      }
+      const prevId = (currentSongIndex - 1 + SONGS.length) % SONGS.length + 1;
+      playSong(prevId);
+    }
+
+    function toggleLoop() {
+      isLooping = !isLooping;
+      audio.loop = isLooping;
+      if (isLooping) {
+        dockLoopBtn.classList.add('bg-amber-400', 'text-slate-950', 'border-amber-400');
+        dockLoopBtn.classList.remove('text-slate-400', 'border-slate-700');
+        showToast('🔁 Đã bật chế độ Lặp lại (Thích hợp cho nhạc nền website)');
+      } else {
+        dockLoopBtn.classList.remove('bg-amber-400', 'text-slate-950', 'border-amber-400');
+        dockLoopBtn.classList.add('text-slate-400', 'border-slate-700');
+        showToast('Đã tắt chế độ lặp lại');
+      }
+    }
+
+    function seekAudio(percent) {
+      if (!isNaN(audio.duration) && audio.duration > 0) {
+        audio.currentTime = (percent / 100) * audio.duration;
+      }
+    }
+
+    function setGlobalVolume(val) {
+      audio.volume = parseFloat(val);
+      const icon = document.getElementById('dock-vol-icon');
+      if (audio.volume === 0) icon.className = 'fa-solid fa-volume-xmark text-slate-400 text-xs';
+      else if (audio.volume < 0.5) icon.className = 'fa-solid fa-volume-low text-amber-400 text-xs';
+      else icon.className = 'fa-solid fa-volume-high text-amber-400 text-xs';
+    }
+
+    function formatTime(seconds) {
+      if (isNaN(seconds) || seconds < 0) return '00:00';
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return `${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
+    }
+
+    // Audio Event Listeners
+    audio.addEventListener('play', () => {
+      dockPlayIcon.className = 'fa-solid fa-pause';
+      renderSongs();
+    });
+
+    audio.addEventListener('pause', () => {
+      dockPlayIcon.className = 'fa-solid fa-play ml-0.5';
+      renderSongs();
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (!isNaN(audio.duration) && audio.duration > 0) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        dockProgress.value = progress;
+        dockCurrentTime.innerText = formatTime(audio.currentTime);
+        dockDuration.innerText = formatTime(audio.duration);
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      if (!isLooping) {
+        playNext();
+      }
+    });
+
+    // Filtering & Search
+    function setFilter(type) {
+      currentFilter = type;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('bg-amber-500', 'text-slate-950', 'shadow-sm');
+        btn.classList.add('bg-slate-100', 'text-slate-700');
+      });
+      const activeBtn = document.getElementById(`filter-${type}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-100', 'text-slate-700');
+        activeBtn.classList.add('bg-amber-500', 'text-slate-950', 'shadow-sm');
+      }
+      renderSongs();
+    }
+
+    function searchSongs(query) {
+      searchQuery = query;
+      renderSongs();
+    }
+
+    // Copy Snippets
+    function copyEmbedCode(btn) {
+      const code = document.getElementById('embed-code-block').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast('Đã copy đoạn mã HTML phát nhạc vào bộ nhớ tạm!');
+        const orig = btn.innerHTML;
+        btn.innerHTML = `<i class="fa-solid fa-check text-emerald-950"></i> Đã Copy!`;
+        setTimeout(() => { btn.innerHTML = orig; }, 2000);
+      });
+    }
+
+    function copySingleSongCode(id, btn) {
+      const song = SONGS.find(s => s.id === id);
+      if (!song) return;
+
+      const code = `<!-- Nhạc nền Giáng Sinh cho website lớp học: ${song.title} (${song.vnTitle}) -->
+<audio id="bg-sacred-music" loop preload="auto">
+  <source src="${song.audioSrc}" type="${song.format}">
+</audio>`;
+
+      navigator.clipboard.writeText(code).then(() => {
+        showToast(`Đã copy mã nhúng bài "${song.title}"!`);
+        const orig = btn.innerHTML;
+        btn.innerHTML = `<i class="fa-solid fa-check text-emerald-600"></i> Đã Copy`;
+        setTimeout(() => { btn.innerHTML = orig; }, 2000);
+      });
+    }
+
+    function copyCurrentSongCode() {
+      if (currentSongIndex === -1) return;
+      const song = SONGS[currentSongIndex];
+      const code = `<!-- Nhạc nền Giáng Sinh cho website lớp học: ${song.title} (${song.vnTitle}) -->
+<audio id="bg-sacred-music" loop preload="auto">
+  <source src="${song.audioSrc}" type="${song.format}">
+</audio>`;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast(`Đã copy mã nhúng bài "${song.title}"!`);
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-text').innerText = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2500);
+    }
+
+    /**
+     * GENTLE SNOWFALL CANVAS EFFECT
+     */
+    function initSnowCanvas() {
+      const canvas = document.getElementById('snow-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let w = canvas.width = window.innerWidth;
+      let h = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', () => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+
+      const flakes = [];
+      for (let i = 0; i < 35; i++) {
+        flakes.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 2.5 + 1,
+          speedY: Math.random() * 0.6 + 0.3,
+          speedX: (Math.random() - 0.5) * 0.4,
+          opacity: Math.random() * 0.5 + 0.2
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = '#f59e0b';
+
+        flakes.forEach(f => {
+          ctx.beginPath();
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+          ctx.globalAlpha = f.opacity;
+          ctx.fill();
+
+          f.y += f.speedY;
+          f.x += f.speedX;
+
+          if (f.y > h) { f.y = -5; f.x = Math.random() * w; }
+          if (f.x > w) f.x = 0;
+          if (f.x < 0) f.x = w;
+        });
+
+        requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    // Init on DOM ready
+    window.addEventListener('DOMContentLoaded', () => {
+      renderSongs();
+      initSnowCanvas();
+    });
+  </script>
+</body>
+</html>

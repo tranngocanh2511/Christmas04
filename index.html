@@ -63,7 +63,6 @@
       <nav class="hidden md:flex items-center gap-2 lg:gap-3 text-xs uppercase font-extrabold text-slate-700">
         <a href="#advent-section" class="px-3.5 py-2 rounded-full hover:text-amber-700 hover:bg-amber-100 transition">Mùa Vọng</a>
         <a href="#star-section" class="px-3.5 py-2 rounded-full hover:text-amber-700 hover:bg-amber-100 transition">Theo Ánh Sao</a>
-        <a href="#letter-section" class="px-3.5 py-2 rounded-full hover:text-amber-700 hover:bg-amber-100 transition">Thư Gửi Chúa</a>
         <a href="#nativity-section" class="px-3.5 py-2 rounded-full hover:text-amber-700 hover:bg-amber-100 transition">Hang Đá</a>
       </nav>
 
@@ -74,16 +73,11 @@
           <span>⭐ Hành Trình: <strong>0%</strong></span>
         </div>
 
-        <!-- Nút Mở Bảng Lời Cầu Nguyện Hằng Ngày -->
-        <button onclick="window.faithJourney.openPrayerModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-black bg-gradient-to-r from-blue-50 to-indigo-100 hover:from-blue-100 hover:to-indigo-200 text-blue-900 border-2 border-blue-300 shadow-sm transition hover:scale-105" title="Mở Bảng Lời Cầu Nguyện Hằng Ngày (Tĩnh Tâm 10s)">
-          <span class="text-sm">🙏</span>
-          <span class="hidden sm:inline">Lời Nguyện</span>
-        </button>
 
-        <!-- Music Controller Box (Hiển thị tên bài hát theo tên file nhạc) -->
-        <div class="flex items-center gap-2 bg-gradient-to-r from-amber-100 to-yellow-100 border-2 border-amber-300 rounded-full px-3 py-1.5 shadow-sm">
+        <!-- Music Controller Box: 10 Bài Thánh Ca Giáng Sinh Tuyển Chọn -->
+        <div class="flex items-center gap-2 bg-gradient-to-r from-amber-100 via-yellow-100 to-amber-100 border-2 border-amber-300 rounded-full px-3 py-1.5 shadow-sm">
           <!-- Play / Pause Button -->
-          <button id="music-toggle-btn" onclick="window.sacredAudio.toggleMusic()" class="inline-flex items-center gap-1.5 text-xs font-black text-amber-900 hover:text-amber-700 transition" title="Bật / Dừng nhạc">
+          <button id="music-toggle-btn" onclick="window.sacredAudio.toggleMusic()" class="inline-flex items-center gap-1.5 text-xs font-black text-amber-900 hover:text-amber-700 transition hover:scale-110 active:scale-95" title="Bật / Tạm dừng nhạc Giáng Sinh">
             <span id="music-play-icon" class="text-sm">▶️</span>
             <div id="music-waves" class="hidden flex items-end gap-0.5 h-3">
               <span class="w-0.5 h-2 bg-amber-600 animate-pulse"></span>
@@ -92,15 +86,21 @@
             </div>
           </button>
 
-          <!-- Tên File Bài Hát Hiển Thị -->
-          <div class="flex items-center gap-1 text-[11px] sm:text-xs font-black text-amber-950 max-w-[120px] sm:max-w-[190px] md:max-w-[240px] truncate" title="Tên bài hát đang phát">
+          <!-- Tên Bài Hát Hiển Thị (Bấm vào để mở danh sách 10 bài) -->
+          <div onclick="window.sacredAudio.openPlaylistModal()" class="flex items-center gap-1 text-[11px] sm:text-xs font-black text-amber-950 max-w-[110px] sm:max-w-[180px] md:max-w-[220px] truncate cursor-pointer hover:text-amber-700 transition" title="Bấm để xem & chọn trong danh sách 10 bài Thánh Ca Giáng Sinh">
             <span class="text-xs">🎶</span>
-            <span id="music-song-name" class="truncate font-mono">Dem_Thanh_Vo_Cung.mp3</span>
+            <span id="music-song-name" class="truncate font-sans font-bold">Joy to the World</span>
           </div>
 
           <!-- Nút Đổi Bài Ngẫu Nhiên -->
-          <button onclick="window.sacredAudio.nextRandomSong(event)" class="text-xs text-amber-800 hover:text-amber-950 hover:scale-125 transition px-1" title="Đổi bài ngẫu nhiên (Nghe bài khác)">
+          <button onclick="window.sacredAudio.nextRandomSong(event)" class="text-xs text-amber-800 hover:text-amber-950 hover:scale-125 transition px-0.5" title="Đổi bài ngẫu nhiên (Nghe bài khác)">
             🔀
+          </button>
+
+          <!-- Nút Mở Danh Sách 10 Bài Thánh Ca -->
+          <button onclick="window.sacredAudio.openPlaylistModal(event)" class="text-[11px] bg-amber-200/90 hover:bg-amber-300 text-amber-950 font-black rounded-full px-2 py-0.5 border border-amber-400/70 transition-transform hover:scale-105 flex items-center gap-1 shadow-2xs" title="Mở danh sách 10 bài nhạc Thánh Ca Giáng Sinh">
+            <span>🎼</span>
+            <span class="hidden md:inline">10 Bài</span>
           </button>
         </div>
       </div>
@@ -318,41 +318,6 @@
         </button>
       </div>
 
-      <!-- KHỐI NHIỆM VỤ LỜI CẦU NGUYỆN HẰNG NGÀY (Xem lại bất cứ lúc nào) -->
-      <div id="daily-prayer-task-card" class="max-w-4xl mx-auto mb-8 p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-blue-50/90 via-amber-50/80 to-yellow-50 border-3 border-amber-300 shadow-md relative overflow-hidden transition-all duration-300 hover:shadow-lg">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div class="flex items-center gap-3.5 text-left w-full md:w-auto">
-            <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-b from-blue-600 via-blue-700 to-indigo-900 text-white flex items-center justify-center text-2xl shadow-md flex-shrink-0 ring-3 ring-amber-300">
-              🙏
-            </div>
-            <div>
-              <div class="flex items-center gap-2 mb-1 flex-wrap">
-                <span class="text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-900 border border-blue-200">
-                  Nhiệm Vụ Hằng Ngày
-                </span>
-                <span id="daily-prayer-badge" class="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
-                  ⏳ Thinh Lặng 10s
-                </span>
-              </div>
-              <h4 id="daily-prayer-task-title" class="text-base sm:text-lg font-black text-amber-950">
-                Lời cầu nguyện buổi tối
-              </h4>
-              <p id="daily-prayer-task-excerpt" class="text-xs sm:text-sm text-slate-600 font-bold line-clamp-1 max-w-xl">
-                Sương đêm buông xuống, xin Chúa bao bọc căn phòng nhỏ của con bằng sự bình an sâu thẳm...
-              </p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-2.5 flex-shrink-0 w-full md:w-auto justify-end">
-            <button onclick="window.faithJourney.switchNextPrayer(event)" class="px-3.5 py-2.5 rounded-xl text-xs font-black text-slate-700 hover:text-amber-800 bg-white border border-amber-200 hover:bg-amber-100/70 shadow-sm transition flex items-center gap-1.5" title="Đổi lời cầu nguyện khác">
-              <span>🔄</span> <span>Đổi bài</span>
-            </button>
-            <button onclick="window.faithJourney.openPrayerModal()" class="m3-kids-btn-primary px-4 py-2.5 text-xs sm:text-sm font-black flex items-center gap-1.5 shadow-md hover:scale-105 transition" title="Mở bảng lời nguyện để tĩnh tâm">
-              <span>📖</span> <span>XEM LỜI NGUYỆN</span>
-            </button>
-          </div>
-        </div>
-      </div>
 
       <!-- Tiêu Đề Tuần Hiện Tại Được Chọn -->
       <div id="star-current-week-header" class="text-center mb-6"></div>
@@ -370,88 +335,14 @@
         <p class="text-slate-800 text-base font-bold mb-5 leading-relaxed">
           Ngôi Sao Bêlem đã sáng rực rỡ trên bầu trời, dẫn thẳng bé tới hang đá nơi Chúa Hài Đồng đang mỉm cười chờ đón con!
         </p>
-        <a href="#letter-section" class="m3-kids-btn-primary text-sm py-3 px-8">
-          Viết Thư Gửi Chúa Hài Đồng →
+        <a href="#nativity-section" class="m3-kids-btn-primary text-sm py-3 px-8">
+          Khám Phá Hang Đá Bêlem →
         </a>
       </div>
     </section>
 
 
-    <!-- SECTION 5 – LÁ THƯ GỬI CHÚA HÀI ĐỒNG (Trang Thư Trắng Tươi Sáng) -->
-    <section id="letter-section" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 border-2 border-amber-300">Tâm Tình Tuổi Thơ</span>
-        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 mt-3 mb-2">LÁ THƯ GỬI CHÚA HÀI ĐỒNG</h2>
-        <p class="text-amber-700 font-serif italic text-lg sm:text-2xl font-bold">“Hãy thổ lộ cùng Người những ước mong trong trái tim con.”</p>
-      </div>
 
-      <div class="relative max-w-3xl mx-auto">
-        
-        <!-- Giấy Thư Đáng Yêu Trang Trí Giáng Sinh Nền Trắng Sáng -->
-        <div id="parchment-letter-wrapper" class="relative rounded-3xl p-6 sm:p-12 border-4 border-amber-400 shadow-2xl overflow-hidden bg-[#fffdf5] text-slate-900">
-          
-          <!-- Họa Tiết Nền Lá Thư -->
-          <div class="absolute inset-0 pointer-events-none opacity-20">
-            <img src="assets/kids_letter.jpg" alt="Trang Thư Giáng Sinh Tuổi Thơ" class="w-full h-full object-cover">
-          </div>
-
-          <div class="relative z-10">
-            
-            <!-- Đầu Thư Dễ Thương -->
-            <div class="flex items-center justify-between border-b-2 border-amber-300 pb-4 mb-6">
-              <div>
-                <span class="text-3xl sm:text-4xl font-black text-amber-800">Chúa Giêsu yêu quý,</span>
-                <p class="text-xs font-bold text-amber-700 italic">Thư con viết gửi về Hang Đá Bêlem</p>
-              </div>
-              <div class="w-14 h-14 rounded-full bg-amber-400 border-2 border-white flex items-center justify-center text-white font-black text-2xl shadow-md">
-                ❤️
-              </div>
-            </div>
-
-            <!-- Các Câu Hỏi Hướng Dẫn Tâm Hồn -->
-            <div class="space-y-4 text-sm font-bold text-slate-800">
-              <div>
-                <label class="block mb-1 text-amber-900">1. Điều con cảm thấy biết ơn Chúa nhất trong năm qua:</label>
-                <input id="letter-gratitude" type="text" placeholder="Con được đi học, có gia đình ấm êm, có bạn bè tốt..." class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-amber-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500">
-              </div>
-
-              <div>
-                <label class="block mb-1 text-amber-900">2. Nỗi lo lắng hay buồn rầu con muốn trao hết cho Chúa:</label>
-                <input id="letter-worry" type="text" placeholder="Bài kiểm tra khó, lúc bị điểm chưa tốt, nỗi sợ bóng tối..." class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-amber-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500">
-              </div>
-
-              <div>
-                <label class="block mb-1 text-amber-900">3. Người bạn hoặc người thân con muốn cầu xin Chúa che chở:</label>
-                <input id="letter-prayfor" type="text" placeholder="Tên ông bà đang ốm, người bạn buồn, các em bé khó khăn..." class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-amber-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500">
-              </div>
-
-              <div>
-                <label class="block mb-1 text-amber-900">4. Một thói quen xấu con muốn sửa đổi để ngoan hơn:</label>
-                <input id="letter-change" type="text" placeholder="Bớt nhõng nhẽo, nghe lời cha mẹ hơn, không trêu chọc bạn..." class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-amber-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500">
-              </div>
-
-              <div>
-                <label class="block mb-1 text-amber-900">5. Ước mơ tươi đẹp nhất của con trong năm mới:</label>
-                <input id="letter-hope" type="text" placeholder="Gia đình con luôn hạnh phúc, con học giỏi và làm Chúa vui lòng..." class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-amber-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500">
-              </div>
-            </div>
-
-            <!-- Nút Trao Thư -->
-            <div class="mt-8 text-center pt-4 border-t-2 border-amber-200">
-              <button onclick="window.faithJourney.sendLetter(event)" class="m3-kids-btn-primary px-8 py-3.5 text-base sm:text-lg">
-                <span>❤️</span>
-                <span>ĐẶT THƯ VÀO TAY CHÚA</span>
-              </button>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div id="letter-sent-container" class="hidden mt-6"></div>
-
-      </div>
-    </section>
 
 
 
@@ -761,6 +652,13 @@
         </svg>
       </div>
 
+      <!-- Badge chủ đề lời nguyện -->
+      <div class="mb-2">
+        <span id="prayer-modal-day-badge" class="inline-flex items-center gap-1 px-3 py-0.5 rounded-full text-[11px] font-black bg-amber-100 text-amber-900 border border-amber-300 shadow-2xs">
+          Tạ Ơn & Yêu Thương • Bài #1
+        </span>
+      </div>
+
       <!-- Tiêu đề lời nguyện (Ví dụ: Lời cầu nguyện buổi tối) -->
       <h3 id="prayer-modal-title" class="text-xl sm:text-2xl font-black text-amber-800 mb-3 tracking-tight">
         Lời cầu nguyện buổi tối
@@ -789,70 +687,212 @@
     </div>
   </div>
 
-  <!-- MODAL: Thiệp Giáng Sinh Yêu Thương (Popup Tuần 4) -->
-  <div id="christmas-card-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50 backdrop-blur-md animate-fade-in overflow-y-auto">
-    <div class="m3-bright-card max-w-lg w-full p-6 sm:p-8 bg-gradient-to-b from-white via-amber-50 to-orange-50 border-4 border-amber-400 text-center relative shadow-2xl my-8">
+  <!-- ========================================== -->
+  <!-- MODAL: TUYỂN TẬP 10 BÀI THÁNH CA GIÁNG SINH CHO THIẾU NHI -->
+  <!-- Tích hợp trực tiếp từ nhac-giang-sinh.html -->
+  <!-- ========================================== -->
+  <div id="sacred-music-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-md animate-fade-in">
+    <div id="sacred-music-card" class="bg-gradient-to-b from-amber-50/95 via-white to-amber-50/90 rounded-[28px] max-w-3xl w-full max-h-[90vh] flex flex-col relative shadow-[0_25px_60px_rgba(0,0,0,0.35)] border-2 border-amber-300 transform transition-all duration-300 scale-95 opacity-0 overflow-hidden font-sans">
       
-      <button onclick="window.faithJourney.closeChristmasCardModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-2xl font-black transition p-1">✕</button>
+      <!-- Modal Header -->
+      <div class="px-5 sm:px-6 pt-5 pb-3 border-b border-amber-200/80 bg-white/80 backdrop-blur-sm flex items-start justify-between gap-3 relative z-10 flex-shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center text-white text-2xl shadow-md flex-shrink-0">
+            <span>⭐</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <h3 class="text-base sm:text-lg font-black text-amber-950 uppercase tracking-tight">10 Bài Thánh Ca Giáng Sinh Cho Thiếu Nhi</h3>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-100 text-amber-900 border border-amber-300">Công Giáo</span>
+            </div>
+            <p class="text-xs text-slate-600 font-bold">Bấm vào bất kỳ bài nào để phát ngay làm nhạc nền cho website</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <!-- Standalone player link -->
+          <a href="nhac-giang-sinh.html" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-black bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 transition" title="Mở trang nghe nhạc riêng biệt đầy đủ">
+            <span>🔗</span>
+            <span>Mở Trang Riêng</span>
+          </a>
+          <!-- Close button -->
+          <button onclick="window.sacredAudio.closePlaylistModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center text-lg font-bold transition">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Tabs & Search Bar -->
+      <div class="px-5 sm:px-6 py-2.5 bg-amber-100/50 border-b border-amber-200/60 flex flex-col sm:flex-row items-center justify-between gap-2.5 flex-shrink-0">
+        <!-- Tabs -->
+        <div class="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-0.5 sm:pb-0 text-xs font-black">
+          <button onclick="window.sacredAudio.setFilter('all')" id="modal-filter-all" class="px-3 py-1.5 rounded-full bg-amber-500 text-slate-950 font-black shadow-xs transition">
+            Tất Cả (10 Bài)
+          </button>
+          <button onclick="window.sacredAudio.setFilter('upbeat')" id="modal-filter-upbeat" class="px-3 py-1.5 rounded-full bg-white hover:bg-amber-100 text-slate-700 transition border border-amber-200">
+            ⚡ Rộn Ràng
+          </button>
+          <button onclick="window.sacredAudio.setFilter('gentle')" id="modal-filter-gentle" class="px-3 py-1.5 rounded-full bg-white hover:bg-amber-100 text-slate-700 transition border border-amber-200">
+            🕊️ Dịu Êm
+          </button>
+        </div>
+
+        <!-- Search -->
+        <div class="relative w-full sm:w-56">
+          <input type="text" id="modal-music-search" oninput="window.sacredAudio.searchSongs(this.value)" placeholder="Tìm bài hát, tác giả..." class="w-full pl-8 pr-3 py-1.5 rounded-full bg-white border border-amber-200 text-xs font-bold text-slate-800 focus:outline-none focus:border-amber-500 shadow-2xs">
+          <span class="absolute left-2.5 top-2 text-slate-400 text-xs">🔍</span>
+        </div>
+      </div>
+
+      <!-- Songs List Container (Scrollable) -->
+      <div id="sacred-music-modal-list" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-2.5">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Bottom Audio Bar in Modal -->
+      <div class="px-5 sm:px-6 py-3 border-t border-amber-200/80 bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-3 flex-shrink-0">
+        <!-- Current Song info -->
+        <div class="flex items-center gap-3 w-full sm:w-auto min-w-0">
+          <button id="modal-dock-play-btn" onclick="window.sacredAudio.toggleMusic()" class="w-10 h-10 rounded-full bg-gradient-to-r from-amber-400 to-yellow-400 text-slate-950 flex items-center justify-center font-black shadow-md hover:scale-105 active:scale-95 transition flex-shrink-0">
+            <span id="modal-dock-play-icon">▶️</span>
+          </button>
+          <div class="min-w-0 flex-1 sm:max-w-xs">
+            <div class="text-[10px] text-amber-300 font-extrabold uppercase tracking-wide truncate" id="modal-dock-vibe">Thánh Ca Giáng Sinh</div>
+            <h4 id="modal-dock-title" class="text-xs sm:text-sm font-black text-white truncate">Joy to the World</h4>
+            <p id="modal-dock-sub" class="text-[11px] text-slate-400 truncate">Phước Cho Nhân Loại • G.F. Händel</p>
+          </div>
+        </div>
+
+        <!-- Quick Controls: Prev, Next, Loop, Volume -->
+        <div class="flex items-center gap-2 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
+          <button onclick="window.sacredAudio.playPrev()" class="text-slate-400 hover:text-white p-1 text-sm transition" title="Bài trước">
+            ⏮️
+          </button>
+          <button onclick="window.sacredAudio.nextRandomSong()" class="text-slate-400 hover:text-amber-400 p-1 text-sm transition" title="Đổi bài ngẫu nhiên">
+            🔀
+          </button>
+          <button onclick="window.sacredAudio.playNext()" class="text-slate-400 hover:text-white p-1 text-sm transition" title="Bài kế tiếp">
+            ⏭️
+          </button>
+          <button id="modal-loop-btn" onclick="window.sacredAudio.toggleLoop()" class="px-2.5 py-1 rounded-lg text-xs font-bold border border-slate-700 text-slate-400 hover:text-amber-300 transition" title="Lặp lại bài hát này">
+            🔁 <span id="modal-loop-text" class="hidden xs:inline text-[11px]">Lặp bài: Tắt</span>
+          </button>
+          <div class="flex items-center gap-1.5">
+            <span class="text-xs">🔊</span>
+            <input type="range" min="0" max="1" step="0.05" value="0.55" oninput="window.sacredAudio.setVolume(this.value)" class="w-16 sm:w-20 accent-amber-400 cursor-pointer">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL: Thiệp Giáng Sinh Yêu Thương (Popup Tuần 4) -->
+  <div id="christmas-card-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in overflow-y-auto">
+    <div class="m3-bright-card max-w-2xl w-full p-5 sm:p-7 bg-gradient-to-b from-white via-amber-50/70 to-orange-50/80 border-4 border-amber-400 text-center relative shadow-2xl my-6">
+      
+      <button onclick="window.faithJourney.closeChristmasCardModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-2xl font-black transition p-1 z-20">✕</button>
       
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100 text-rose-800 border border-rose-300 text-xs font-black uppercase mb-3">
         <span>💌</span> Nhiệm Vụ Tuần 4: Thiệp Giáng Sinh
       </div>
 
-      <h3 class="text-2xl sm:text-3xl font-black text-amber-900 mb-2">TẠO THIỆP GIÁNG SINH</h3>
-      <p class="text-xs sm:text-sm text-slate-600 font-bold mb-5">
-        Bé hãy nhập tên người muốn gửi tặng để tạo thiệp chúc lành ấm áp nhé!
+      <h3 class="text-2xl sm:text-3xl font-black text-amber-900 mb-1">TẠO THIỆP GIÁNG SINH</h3>
+      <p class="text-xs sm:text-sm text-slate-600 font-bold mb-4">
+        Bé hãy chọn hình nền Hang Đá Bêlem yêu thích và nhập tên người nhận để gửi trao muôn hồng ân nhé!
       </p>
 
-      <!-- Ô nhập tên -->
-      <div class="mb-5 text-left">
-        <label for="card-recipient-input" class="block text-xs uppercase font-black text-amber-800 mb-1.5">
-          Gửi tặng đến (Tên bé, Cha Mẹ, Bạn bè, Gia đình...):
+      <!-- Ô nhập tên người nhận -->
+      <div class="mb-4 text-left">
+        <label for="card-recipient-input" class="block text-xs uppercase font-black text-amber-900 mb-1.5 flex items-center justify-between">
+          <span>Gửi tặng đến (Tên bé, Cha Mẹ, Bạn bè, Gia đình...):</span>
+          <span class="text-[11px] font-bold text-amber-700">Tùy chỉnh tên ✨</span>
         </label>
         <div class="relative">
-          <input id="card-recipient-input" type="text" placeholder="Ví dụ: Bố Mẹ kính yêu, Bạn An, Cả Gia Đình..." oninput="window.faithJourney.updateCardRecipient(this.value)" class="w-full px-4 py-3 rounded-2xl bg-white border-2 border-amber-300 text-slate-900 font-black text-sm placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:ring-4 focus:ring-amber-300/30 transition shadow-sm">
-          <span class="absolute right-3.5 top-3 text-lg">✍️</span>
+          <input id="card-recipient-input" type="text" placeholder="Ví dụ: Bố Mẹ kính yêu, Bạn An, Cả Gia Đình..." oninput="window.faithJourney.updateCardRecipient(this.value)" class="w-full px-4 py-2.5 rounded-2xl bg-white border-2 border-amber-300 text-slate-900 font-black text-sm placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:ring-4 focus:ring-amber-300/30 transition shadow-sm">
+          <span class="absolute right-3.5 top-2.5 text-lg">✍️</span>
+        </div>
+      </div>
+
+      <!-- BỘ CHỌN HÌNH NỀN THIỆP TỪ THƯ MỤC THIEP-POP-UP -->
+      <div class="mb-5 text-left bg-amber-50/90 p-3 sm:p-4 rounded-2xl border-2 border-amber-300 shadow-sm">
+        <div class="flex items-center justify-between mb-2.5 flex-wrap gap-1">
+          <label class="text-xs uppercase font-black text-amber-900 flex items-center gap-1.5">
+            <span>🎨</span>
+            <span>Chọn hình nền thiệp (Hang Đá Bêlem):</span>
+          </label>
+          <span id="card-bg-selected-title" class="text-[11px] sm:text-xs font-black text-amber-800 bg-amber-200/90 px-2.5 py-0.5 rounded-full border border-amber-300 shadow-xs">
+            Hang Đá 1 - Đấng Cứu Thế Giáng Sinh
+          </span>
+        </div>
+        
+        <!-- Danh sách mẫu hình nền (5 hình trong Thiep-pop-up + mẫu mặc định) -->
+        <div id="card-bg-picker-container" class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+          <!-- Được sinh tự động từ faithJourney.renderCardBgPicker() -->
+        </div>
+      </div>
+
+      <!-- Thanh công cụ Xem trước & Tùy chọn hiển thị thiệp -->
+      <div class="flex items-center justify-between mb-2 px-1 flex-wrap gap-2">
+        <span class="text-xs font-black text-amber-900 uppercase tracking-wide flex items-center gap-1">
+          <span>👀</span> <span>Xem trước thiệp chúc mừng:</span>
+        </span>
+        <div class="flex items-center gap-2">
+          <button type="button" id="card-layout-toggle-btn" onclick="window.faithJourney.toggleCardLayoutStyle()" class="text-[11px] font-black px-3 py-1 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 transition-all shadow-xs flex items-center gap-1">
+            <span>🎨</span> <span>Xem Tranh Toàn Cảnh</span>
+          </button>
+          <button type="button" onclick="window.faithJourney.viewCurrentCardArtwork()" class="text-[11px] font-black px-2.5 py-1 rounded-full bg-rose-100 hover:bg-rose-200 text-rose-900 border border-rose-300 transition-all shadow-xs flex items-center gap-1" title="Phóng to chiêm ngắm tranh Hang Đá gốc">
+            <span>🔍</span> <span>Xem Ảnh Gốc</span>
+          </button>
         </div>
       </div>
 
       <!-- Khung Thiệp Giáng Sinh Xem Trước (Print Area) -->
-      <div id="christmas-card-print-area" class="relative rounded-3xl p-6 sm:p-8 bg-[#fffef7] border-3 border-amber-300 shadow-lg text-center overflow-hidden mb-6">
+      <div id="christmas-card-print-area" class="relative rounded-3xl p-4 sm:p-6 border-4 border-amber-400 shadow-xl overflow-hidden mb-6 text-center transition-all duration-500 bg-cover bg-center min-h-[360px] flex flex-col justify-center">
         
-        <!-- Họa tiết trang trí thiệp -->
-        <div class="flex items-center justify-between text-2xl opacity-75 mb-2">
-          <span>🔔</span>
-          <span class="text-3xl animate-bounce">🌟</span>
-          <span>🎄</span>
-        </div>
-
-        <span class="text-[11px] font-black uppercase tracking-widest text-amber-700 bg-amber-100 px-3 py-1 rounded-full border border-amber-200 inline-block mb-3">
-          Tin Mừng Bêlem
-        </span>
-
-        <h4 class="text-2xl sm:text-3xl font-black text-amber-700 uppercase tracking-tight mb-2">
-          MỪNG CHÚA GIÁNG SINH
-        </h4>
-
-        <!-- Tên người nhận hiển thị nổi bật -->
-        <div class="my-4 py-2 border-y-2 border-dashed border-amber-300/70 bg-amber-50/50 rounded-xl">
-          <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block">Thương gửi tặng:</span>
-          <div id="card-preview-name" class="text-2xl sm:text-3xl font-black text-rose-700 font-serif italic py-1 break-words">
-            Gia Đình Thân Yêu
+        <!-- Lớp phủ mềm mại bán trong suốt để hình nền hiển thị lung linh mà chữ viết vẫn sắc nét -->
+        <div id="card-content-overlay" class="relative z-10 bg-white/85 sm:bg-white/80 backdrop-blur-[2px] rounded-2xl p-4 sm:p-6 border-2 border-amber-300/80 shadow-lg text-slate-900 transition-all duration-500">
+          
+          <!-- Họa tiết trang trí thiệp -->
+          <div class="flex items-center justify-between text-2xl opacity-90 mb-1">
+            <span class="animate-pulse">🔔</span>
+            <span class="text-3xl animate-bounce">🌟</span>
+            <span class="animate-pulse">🎄</span>
           </div>
-        </div>
 
-        <p class="text-sm sm:text-base font-serif italic text-amber-950 font-bold mb-3 leading-relaxed">
-          “Vinh danh Thiên Chúa trên trời,<br>Bình an dưới thế cho người thiện tâm.”
-        </p>
+          <span class="text-[11px] font-black uppercase tracking-widest text-amber-800 bg-amber-100/90 px-3.5 py-1 rounded-full border border-amber-300 inline-block mb-2 shadow-xs">
+            Tin Mừng Bêlem • Thiệp Giáng Sinh
+          </span>
 
-        <p class="text-xs sm:text-sm text-slate-700 font-bold leading-relaxed mb-4">
-          Nguyện xin Chúa Hài Đồng Giêsu chúc lành, ban muôn hồng ân, sức khỏe, bình an và niềm vui chan hòa trên bạn cùng gia đình suốt Mùa Giáng Sinh và Năm Mới!
-        </p>
+          <h4 class="text-2xl sm:text-3xl font-black text-amber-800 uppercase tracking-tight mb-2 drop-shadow-xs">
+            MỪNG CHÚA GIÁNG SINH
+          </h4>
 
-        <div class="flex items-center justify-center gap-2 text-xs font-extrabold text-amber-800 pt-2 border-t border-amber-200">
-          <span>✨</span>
-          <span>Ánh Sáng Giáng Sinh • Hành Trình Đức Tin</span>
-          <span>✨</span>
+          <!-- Tên người nhận hiển thị nổi bật -->
+          <div id="card-preview-name-container" class="my-3 py-2 px-3 border-2 border-dashed border-amber-400/80 bg-gradient-to-r from-amber-50/90 via-orange-50/90 to-amber-50/90 rounded-2xl shadow-inner">
+            <span class="text-xs font-black text-slate-600 uppercase tracking-wider block mb-0.5">Thương gửi tặng:</span>
+            <div id="card-preview-name" class="text-2xl sm:text-3xl font-black text-rose-700 font-serif italic py-0.5 break-words drop-shadow-xs">
+              Gia Đình Thân Yêu
+            </div>
+          </div>
+
+          <!-- Câu trích dẫn ý nghĩa theo hình nền đã chọn -->
+          <p id="card-preview-quote" class="text-sm sm:text-base font-serif italic text-amber-950 font-black mb-2 leading-relaxed drop-shadow-2xs">
+            “Hôm nay Đấng Cứu Thế đã giáng sinh cho chúng ta”
+          </p>
+
+          <!-- Lời chúc lành -->
+          <p id="card-preview-msg" class="text-xs sm:text-sm text-slate-800 font-extrabold leading-relaxed mb-3">
+            Nguyện xin Chúa Hài Đồng Giêsu chúc lành, ban muôn hồng ân, sức khỏe, bình an và niềm vui chan hòa trên bạn cùng gia đình suốt Mùa Giáng Sinh và Năm Mới!
+          </p>
+
+          <!-- Chân thiệp -->
+          <div class="flex items-center justify-center gap-2 text-xs font-black text-amber-900 pt-2 border-t border-amber-300/60">
+            <span>✨</span>
+            <span>Ánh Sáng Giáng Sinh • Hành Trình Đức Tin</span>
+            <span>✨</span>
+          </div>
+
         </div>
       </div>
 
@@ -864,7 +904,7 @@
         </button>
         <button onclick="window.faithJourney.printChristmasCard()" class="m3-kids-btn-tonal py-3 px-5 text-sm font-black" title="In thiệp ra giấy">
           <span>🖨️</span>
-          <span>In Thiệp</span>
+          <span>In Thiệp Ra Giấy</span>
         </button>
       </div>
 

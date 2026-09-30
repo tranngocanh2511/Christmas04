@@ -69,6 +69,213 @@ class TaskMediaDB {
 }
 
 /**
+ * KHO DỮ LIỆU 20 LỜI NGUYỆN CÔNG GIÁO THIẾU NHI MỖI NGÀY
+ * Trích xuất nguyên bản từ '20 lời nguyện.docx'
+ */
+const SACRED_PRAYERS_REPOSITORY = [
+  {
+    id: 1,
+    dayNum: 1,
+    period: 'morning',
+    periodName: 'Lời nguyện Ngày 1: Tạ Ơn Tình Yêu Chúa',
+    theme: 'Tạ Ơn & Yêu Thương',
+    themeBadge: 'bg-amber-100 text-amber-900 border-amber-300',
+    content: 'Lạy Chúa, con tạ ơn Chúa vì đã luôn yêu thương và gìn giữ con từng phút giây. Xin cho con luôn nhớ rằng mình là một đứa con bé bỏng luôn được Chúa cưng chiều và bảo vệ.',
+    subtext: 'Con bé bỏng luôn được Chúa cưng chiều'
+  },
+  {
+    id: 2,
+    dayNum: 2,
+    period: 'evening',
+    periodName: 'Lời nguyện Ngày 2: Xin Nắm Lấy Tay Con',
+    theme: 'Ăn Năn & Cậy Trông',
+    themeBadge: 'bg-blue-100 text-blue-900 border-blue-300',
+    content: 'Chúa ơi, nhiều lúc con ham chơi mà quên mất Chúa đang ở bên cạnh chờ đợi con. Xin tha lỗi cho con và xin nắm lấy tay con, dẫn con đi trong tình yêu êm ái của Ngài.',
+    subtext: 'Xin dẫn con đi trong tình yêu êm ái'
+  },
+  {
+    id: 3,
+    dayNum: 3,
+    period: 'morning',
+    periodName: 'Lời nguyện Ngày 3: Trái Tim Hiền Hậu',
+    theme: 'Noi Gương Chúa Giêsu',
+    themeBadge: 'bg-rose-100 text-rose-900 border-rose-300',
+    content: 'Lạy Chúa Giêsu, xin biến đổi trái tim bé nhỏ của con nên giống trái tim hiền hậu của Chúa. Xin dạy con biết yêu thương mọi người như chính Chúa đã yêu thương con.',
+    subtext: 'Yêu thương mọi người như chính Chúa yêu con'
+  },
+  {
+    id: 4,
+    dayNum: 4,
+    period: 'evening',
+    periodName: 'Lời nguyện Ngày 4: Lắng Đọng Tâm Hồn',
+    theme: 'Tĩnh Tâm & Gặp Gỡ',
+    themeBadge: 'bg-indigo-100 text-indigo-900 border-indigo-300',
+    content: 'Chúa ơi, thế giới ồn ào nhiều lúc làm con xao lãng, chẳng nhớ nâng tâm hồn lên cùng Ngài. Xin Chúa nhẹ nhàng gõ cửa trái tim, để con luôn biết dành cho Chúa một vị trí trọn vẹn nhất.',
+    subtext: 'Dành cho Chúa vị trí trọn vẹn nhất'
+  },
+  {
+    id: 5,
+    dayNum: 5,
+    period: 'noon',
+    periodName: 'Lời nguyện Ngày 5: Tâm Hồn Đơn Sơ',
+    theme: 'Biết Ơn Hồng Ân',
+    themeBadge: 'bg-emerald-100 text-emerald-900 border-emerald-300',
+    content: 'Lạy Chúa, con tạ ơn Ngài vì biết bao ơn lành vô hình mà Ngài vẫn âm thầm tuôn đổ trên con mỗi ngày. Xin cho con một tâm hồn đơn sơ để luôn biết rung động và biết ơn tình yêu bao la ấy.',
+    subtext: 'Rung động trước ơn lành âm thầm của Chúa'
+  },
+  {
+    id: 6,
+    dayNum: 6,
+    period: 'evening',
+    periodName: 'Lời nguyện Ngày 6: Vòng Tay Yêu Thương Của Chúa',
+    theme: 'Bao Dung & Tha Thứ',
+    themeBadge: 'bg-amber-100 text-amber-900 border-amber-300',
+    content: 'Những lúc con làm sai hoặc vấp ngã, lạy Chúa, xin đừng để con sợ hãi trốn tránh Ngài. Xin cho con vững tin rằng vòng tay Chúa luôn rộng mở chờ đón con quay về.',
+    subtext: 'Vòng tay Chúa luôn rộng mở đón con'
+  },
+  {
+    id: 7,
+    dayNum: 7,
+    period: 'morning',
+    periodName: 'Lời nguyện Ngày 7: Nụ Cười Lạc Quan Bình An',
+    theme: 'Niềm Vui Đức Tin',
+    themeBadge: 'bg-yellow-100 text-yellow-900 border-yellow-300',
+    content: 'Chúa ơi, xin dạy con biết mỉm cười thật tươi dù hôm nay có chuyện gì xảy ra đi nữa. Vì con biết rằng, chỉ cần có Chúa ở cùng, mọi sự rồi sẽ bình an.',
+    subtext: 'Chỉ cần có Chúa ở cùng, mọi sự sẽ bình an'
+  },
+  {
+    id: 8,
+    dayNum: 8,
+    period: 'morning',
+    periodName: 'Lời nguyện Ngày 8: Ngọn Lửa Chúa Thánh Thần',
+    theme: 'Ơn Chúa Thánh Thần',
+    themeBadge: 'bg-red-100 text-red-900 border-red-300',
+    content: 'Lạy Chúa Thánh Thần, xin thắp sáng ngọn lửa yêu mến trong tâm hồn bé nhỏ của con. Xin soi đường chỉ lối để con luôn biết làm những điều hiền lành, thánh thiện đẹp lòng Chúa.',
+    subtext: 'Soi đường chỉ lối làm điều thánh thiện'
+  },
+  {
+    id: 9,
+    dayNum: 9,
+    period: 'noon',
+    periodName: 'Lời nguyện Ngày 9: Thêm Sức Vững Bước',
+    theme: 'Sức Mạnh Khi Yếu Đuối',
+    themeBadge: 'bg-purple-100 text-purple-900 border-purple-300',
+    content: 'Lạy Chúa, đôi khi con cảm thấy mình thật nhỏ bé và yếu đuối trước những khó khăn. Xin Chúa ôm con vào lòng, truyền thêm sức mạnh để con vững bước mỗi ngày.',
+    subtext: 'Xin Chúa ôm con và truyền thêm sức mạnh'
+  },
+  {
+    id: 10,
+    dayNum: 10,
+    period: 'noon',
+    periodName: 'Lời nguyện Ngày 10: Người Bạn Tri Kỷ Giêsu',
+    theme: 'Tình Bạn Với Chúa',
+    themeBadge: 'bg-sky-100 text-sky-900 border-sky-300',
+    content: 'Chúa Giêsu ơi, xin làm người bạn thân thiết nhất của con trong suốt cuộc đời này. Xin cho con biết chia sẻ mọi tâm tư cùng Chúa như thầm thĩ với một người bạn tri kỷ.',
+    subtext: 'Chúa Giêsu - Người bạn thân thiết nhất'
+  },
+  {
+    id: 11,
+    dayNum: 11,
+    period: 'evening',
+    periodName: 'Lời nguyện Ngày 11: Gieo Rắc Sự Bình An',
+    theme: 'Hòa Giải & Nhẫn Nại',
+    themeBadge: 'bg-teal-100 text-teal-900 border-teal-300',
+    content: 'Lạy Chúa, con xin lỗi vì những lúc con nóng nảy hoặc vô tình làm người khác buồn lòng. Xin Chúa uốn nắn suy nghĩ và hành động của con, để con chỉ gieo rắc sự bình an của Chúa.',
+    subtext: 'Chỉ gieo rắc sự bình an của Chúa'
+  },
+  {
+    id: 12,
+    dayNum: 12,
+    period: 'morning',
+    periodName: 'Lời nguyện Ngày 12: Đôi Mắt Sáng Của Đức Tin',
+    theme: 'Đức Tin Trong Đời Sống',
+    themeBadge: 'bg-amber-100 text-amber-900 border-amber-300',
+    content: 'Xin Chúa cho con đôi mắt sáng của đức tin, để con nhìn thấy Chúa đang mỉm cười với con qua từng điều nhỏ bé quanh mình. Con tạ ơn Chúa vì đã cho con vinh dự làm con của Ngài.',
+    subtext: 'Nhìn thấy Chúa mỉm cười qua từng điều nhỏ bé'
+  },
+  {
+    id: 13,
+    dayNum: 13,
+    period: 'noon',
+    periodName: 'Lời nguyện Ngày 13: Trái Tim Ngoan Ngoãn & Bác Ái',
+    theme: 'Thanh Tẩy Tâm Hồn',
+    themeBadge: 'bg-pink-100 text-pink-900 border-pink-300',
+    content: 'Lạy Chúa, xin thanh tẩy tâm hồn con khỏi những suy nghĩ ích kỷ hay hờn ghen. Xin lấp đầy lòng con bằng tình yêu vô điều kiện của Chúa, để con sống dễ thương và ngoan ngoãn hơn.',
+    subtext: 'Lấp đầy lòng con bằng tình yêu vô điều kiện'
+  },
+  {
+    id: 14,
+    dayNum: 14,
+    period: 'morning',
+    periodName: 'Lời nguyện Ngày 14: Nhịp Đập Tôn Vinh Chúa',
+    theme: 'Ngợi Khen & Tạ Ơn',
+    themeBadge: 'bg-rose-100 text-rose-900 border-rose-300',
+    content: 'Chúa ơi, mỗi nhịp đập của trái tim con đều là một hồng ân Chúa ban. Xin cho con biết dùng chính cuộc sống bé nhỏ này để ngợi khen và làm vinh danh Chúa.',
+    subtext: 'Mỗi nhịp đập trái tim đều là một hồng ân'
+  },
+  {
+    id: 15,
+    dayNum: 15,
+    period: 'evening',
+    periodName: 'Lời nguyện Ngày 15: Nghỉ Ngơi Trong Tình Chúa',
+    theme: 'Bình Yên Tâm Hồn',
+    themeBadge: 'bg-indigo-100 text-indigo-900 border-indigo-300',
+    content: 'Lạy Chúa Giêsu, xin nhắc nhở con rằng Chúa yêu con không phải vì con tài giỏi hay hoàn hảo, mà vì con là chính con. Xin cho tâm hồn con được nghỉ ngơi bình yên trong tình thương mến bao la của Ngài.',
+    subtext: 'Chúa yêu con vì con là chính con'
+  },
+  {
+    id: 16,
+    dayNum: 16,
+    period: 'night',
+    periodName: 'Lời nguyện Ngày 16: Có Cha Đây Rồi, Đừng Sợ!',
+    theme: 'Điểm Tựa Vững Chắc',
+    themeBadge: 'bg-blue-100 text-blue-900 border-blue-300',
+    content: 'Những lúc con buồn chán hay lo sợ, xin Chúa thì thầm vào tai con rằng "Có Cha đây rồi, đừng sợ!". Lời hứa của Chúa chính là điểm tựa vững chắc nhất của cuộc đời con.',
+    subtext: 'Có Cha đây rồi, đừng sợ!'
+  },
+  {
+    id: 17,
+    dayNum: 17,
+    period: 'noon',
+    periodName: 'Lời nguyện Ngày 17: Phút Giây Thinh Lặng',
+    theme: 'Lắng Nghe Tiếng Chúa',
+    themeBadge: 'bg-amber-100 text-amber-900 border-amber-300',
+    content: 'Lạy Chúa, xin dạy con biết thinh lặng đôi chút giữa ngày sống hối hả, để con lắng nghe được tiếng Chúa đang âu yếm gọi tên con.',
+    subtext: 'Lắng nghe tiếng Chúa âu yếm gọi tên con'
+  },
+  {
+    id: 18,
+    dayNum: 18,
+    period: 'morning',
+    periodName: 'Lời nguyện Ngày 18: Phó Thác Cho Chúa Dẫn Đường',
+    theme: 'Phó Thác Đơn Sơ',
+    themeBadge: 'bg-emerald-100 text-emerald-900 border-emerald-300',
+    content: 'Chúa ơi, xin cho con một tâm hồn trong trẻo, luôn tin tưởng phó thác mọi sự trong tay Chúa. Vì con biết, đường Chúa dẫn đi luôn là con đường chan chứa tình yêu và bình an.',
+    subtext: 'Đường Chúa dẫn đi chan chứa tình yêu'
+  },
+  {
+    id: 19,
+    dayNum: 19,
+    period: 'evening',
+    periodName: 'Lời nguyện Ngày 19: Dưới Tà Áo Mẹ Maria',
+    theme: 'Sùng Kính Đức Mẹ',
+    themeBadge: 'bg-sky-100 text-sky-900 border-sky-300',
+    content: 'Lạy Mẹ Maria, xin Mẹ dắt tay con đến gần Chúa Giêsu mỗi ngày một hơn. Xin Mẹ bao bọc tâm hồn con bằng tình mẫu tử, để con luôn biết sống đẹp lòng Chúa như Mẹ.',
+    subtext: 'Mẹ dắt tay con đến gần Chúa Giêsu'
+  },
+  {
+    id: 20,
+    dayNum: 20,
+    period: 'evening',
+    periodName: 'Lời nguyện Ngày 20: Mãi Thuộc Trọn Về Chúa',
+    theme: 'Dâng Hiến Trọn Vẹn',
+    themeBadge: 'bg-amber-100 text-amber-900 border-amber-300',
+    content: 'Lạy Chúa, con không xin gì hơn ngoài việc được Chúa yêu thương và được yêu Chúa hết lòng. Xin cho trái tim nhỏ bé của con mãi mãi thuộc trọn về Ngài.',
+    subtext: 'Cho trái tim nhỏ bé mãi mãi thuộc về Chúa'
+  }
+];
+
+/**
  * Hành Trình Đức Tin - Light of Christmas
  */
 class FaithJourney {
@@ -77,69 +284,21 @@ class FaithJourney {
       hero: false,
       advent: [false, false, false, false],
       dailyPrayer: false,
-      letterOffered: false,
       nativityAdored: false
     };
 
     // ========================================================
     // ⚙️ CẤU HÌNH THỜI GIAN TỰ ĐỘNG XUẤT HIỆN BẢNG LỜI NGUYỆN
-    // Bạn có thể tùy ý sửa GIỜ và PHÚT tại 2 dòng dưới đây:
     // ========================================================
     this.prayerScheduleConfig = {
-      hour: 19,    // Giờ (0 đến 23) -> Ví dụ: 19 là 19h (7 giờ tối), 20 là 20h, 6 là 6h sáng
-      minute: 20   // Phút (0 đến 59) -> Ví dụ: 20 là phút thứ 20, 30 là phút thứ 30
+      hour: 19,    // 19h (7 giờ tối)
+      minute: 20   // Phút thứ 20
     };
 
-    // Kho Lời Cầu Nguyện Tĩnh Tâm Hằng Ngày (sáng, trưa, tối, Mùa Vọng)
-    this.dailyPrayers = [
-      {
-        id: 'evening-1',
-        period: 'evening',
-        periodName: 'Lời cầu nguyện buổi tối',
-        content: 'Sương đêm buông xuống, xin Chúa bao bọc căn phòng nhỏ của con bằng sự bình an sâu thẳm. Cho con rũ bỏ mọi căng thẳng đè nặng trên vai, thả lỏng toàn thân và chìm vào giấc ngủ thật an lành.',
-        subtext: 'Bình an trong giấc ngủ thánh thiện'
-      },
-      {
-        id: 'morning-1',
-        period: 'morning',
-        periodName: 'Lời cầu nguyện buổi sáng',
-        content: 'Tạ ơn Chúa vì một ngày mới chan hòa ánh sáng. Xin soi sáng trí lòng con, ban cho con sự khôn ngoan, lòng hiền hậu và đôi tay sẵn sàng gieo rắc yêu thương đến mọi người xung quanh.',
-        subtext: 'Khởi đầu ngày mới với niềm cậy trông'
-      },
-      {
-        id: 'noon-1',
-        period: 'noon',
-        periodName: 'Lời cầu nguyện ban trưa',
-        content: 'Lạy Chúa Giêsu, giữa những bận rộn của ngày sống, xin ban cho con một phút lắng đọng để nhận ra sự hiện diện của Ngài. Xin ban sức mạnh và niềm vui để con chu toàn mọi bổn phận.',
-        subtext: 'Điểm tựa bình an giữa ngày'
-      },
-      {
-        id: 'evening-2',
-        period: 'evening',
-        periodName: 'Lời cầu nguyện buổi tối',
-        content: 'Lạy Chúa, một ngày nữa đã khép lại. Con xin dâng lên Chúa mọi niềm vui, nỗi buồn và việc lành của ngày hôm nay. Xin gìn giữ gia đình con trong giấc ngủ an lành dưới bóng chở che của Ngài.',
-        subtext: 'Tạ ơn một ngày đã qua'
-      },
-      {
-        id: 'advent-1',
-        period: 'advent',
-        periodName: 'Lời nguyện Mùa Vọng Bêlem',
-        content: 'Lạy Chúa Hài Đồng Giêsu, xin ngự đến trong tâm hồn con như máng cỏ ấm áp đêm đông. Xin thắp sáng trong lòng con ngọn lửa hy vọng, đức tin và tình yêu thương chan chứa.',
-        subtext: 'Dọn lòng đón Chúa Giáng Sinh'
-      }
-    ];
-
-    // Tự động chọn lời nguyện theo buổi hiện tại
-    const curHour = new Date().getHours();
-    if (curHour >= 18 || curHour < 5) {
-      this.currentPrayerIndex = 0; // Buổi tối (như trong ảnh mẫu)
-    } else if (curHour >= 5 && curHour < 11) {
-      this.currentPrayerIndex = 1; // Buổi sáng
-    } else if (curHour >= 11 && curHour < 15) {
-      this.currentPrayerIndex = 2; // Buổi trưa
-    } else {
-      this.currentPrayerIndex = 0; // Buổi chiều tối
-    }
+    // Danh sách lời cầu nguyện lấy trực tiếp từ mảng SACRED_PRAYERS_REPOSITORY (nguồn ở đầu file)
+    this.dailyPrayers = SACRED_PRAYERS_REPOSITORY;
+    const todayDate = new Date().getDate();
+    this.currentPrayerIndex = (todayDate - 1) % this.dailyPrayers.length;
 
     // Biến điều khiển kích hoạt bảng lời nguyện
     this.prayerClickCount = 0;
@@ -165,6 +324,62 @@ class FaithJourney {
 
     this.cardRecipientName = 'Gia Đình Thân Yêu';
 
+    // 5 mẫu hình nền Hang Đá Bêlem từ thư mục Thiep-pop-up + 1 mẫu giấy sáng mặc định
+    this.cardBackgrounds = [
+      {
+        id: 'hang_da_01',
+        name: 'Hang Đá 1',
+        title: 'Đấng Cứu Thế Giáng Sinh',
+        quote: '“Hôm nay Đấng Cứu Thế đã giáng sinh cho chúng ta”',
+        image: 'Thiep-pop-up/Hang_da_01.jpg'
+      },
+      {
+        id: 'hang_da_02',
+        name: 'Hang Đá 2',
+        title: 'Ánh Sao Bêlem Soi Lối',
+        quote: '“Xin Ánh Sao Bêlem soi lối con mỗi ngày”',
+        image: 'Thiep-pop-up/Hang_da_02.jpg'
+      },
+      {
+        id: 'hang_da_03',
+        name: 'Hang Đá 3',
+        title: 'Giáng Sinh An Lành',
+        quote: '“Giáng Sinh an lành, tràn đầy ơn Chúa”',
+        image: 'Thiep-pop-up/Hang_da_03.jpg'
+      },
+      {
+        id: 'hang_da_04',
+        name: 'Hang Đá 4',
+        title: 'Mở Cửa Lòng Đón Chúa',
+        quote: '“Xin cho con biết mở cửa lòng đón Chúa”',
+        image: 'Thiep-pop-up/Hang_da_04.jpg'
+      },
+      {
+        id: 'hang_da_05',
+        name: 'Hang Đá 5',
+        title: 'Lan Tỏa Tình Yêu',
+        quote: '“Nguyện xin tình yêu Chúa Hài Đồng lan tỏa đến mọi người”',
+        image: 'Thiep-pop-up/Hang_da_05.jpg'
+      },
+      {
+        id: 'default_card',
+        name: 'Mặc Định',
+        title: 'Ánh Kim Bêlem Truyền Thống',
+        quote: '“Vinh danh Thiên Chúa trên trời, Bình an dưới thế cho người thiện tâm.”',
+        image: ''
+      }
+    ];
+
+    try {
+      this.selectedCardBgId = localStorage.getItem('christmas_card_bg') || 'hang_da_01';
+      this.cardRecipientName = localStorage.getItem('christmas_card_recipient') || 'Gia Đình Thân Yêu';
+      this.cardLayoutStyle = localStorage.getItem('christmas_card_layout') || 'standard';
+    } catch (e) {
+      this.selectedCardBgId = 'hang_da_01';
+      this.cardRecipientName = 'Gia Đình Thân Yêu';
+      this.cardLayoutStyle = 'standard';
+    }
+
     // Dữ liệu 4 tuần Mùa Vọng & các nhiệm vụ của Dõi Theo Ánh Sao
     this.starWeeksData = [
       {
@@ -185,12 +400,12 @@ class FaithJourney {
           },
           {
             id: 'word',
-            title: "LỜI CHÚA",
-            icon: "📖",
-            subtext: "Lắng nghe trang Tin Mừng",
-            message: "Mở trang Kinh Thánh hoặc lắng nghe Lời Chúa trong tuần Hy Vọng này.",
-            reflection: "“Lời Chúa là ngọn đèn soi cho con bước, là ánh sáng chỉ đường con đi.” (Thánh Vịnh 119:105). Lời Chúa thắp lên trong lòng con niềm hy vọng rạng ngời.",
-            actionText: "Con mở lòng lắng nghe và sống Lời Chúa"
+            title: "LỜI NGUYỆN",
+            icon: "🙏",
+            subtext: "Cầu nguyện thắp sáng hy vọng",
+            message: "Dành phút giây tĩnh tâm dâng lên Chúa lời cầu nguyện hy vọng và sốt sắng.",
+            reflection: "Lời cầu nguyện chân thành như ngọn nến sáng xua tan bóng tối đêm đông, sưởi ấm tâm hồn và thắp lên trong lòng con niềm hy vọng rạng ngời đón chờ Chúa đến.",
+            actionText: "Con sốt sắng dâng lời nguyện cầu hy vọng"
           },
           {
             id: 'forgive',
@@ -221,12 +436,12 @@ class FaithJourney {
           },
           {
             id: 'word',
-            title: "LỜI CHÚA",
-            icon: "📖",
-            subtext: "Suy niệm Lời Hằng Sống",
-            message: "Lắng nghe Lời Chúa kêu gọi dọn đường cho Đấng Cứu Thế ngự vào tâm hồn.",
-            reflection: "“Hãy dọn sẵn con đường cho Đức Chúa, sửa lối cho thẳng để Người đi.” (Mt 3:3). Đức tin sống động bắt đầu từ việc lắng nghe và vâng giữ Lời Ngài.",
-            actionText: "Con tin cậy và bước theo Lời Chúa chỉ dạy"
+            title: "LỜI NGUYỆN",
+            icon: "🙏",
+            subtext: "Cầu nguyện củng cố đức tin",
+            message: "Dâng lời cầu nguyện xin Chúa ban thêm đức tin son sắt và tấm lòng trong sạch.",
+            reflection: "Lời cầu nguyện là nhịp cầu nối kết trái tim bé nhỏ của con với Chúa. Cầu nguyện giúp nuôi dưỡng đức tin sống động và dẫn bước con đi trong sự thánh thiện mỗi ngày.",
+            actionText: "Con tha thiết cầu nguyện củng cố đức tin"
           },
           {
             id: 'gratitude',
@@ -257,12 +472,12 @@ class FaithJourney {
           },
           {
             id: 'word',
-            title: "LỜI CHÚA",
-            icon: "📖",
-            subtext: "Tin Mừng Mang Niềm Vui",
-            message: "Để Lời Chúa thổi bùng ngọn lửa hân hoan tươi vui trong trái tim bé nhỏ.",
-            reflection: "Tin Mừng là tin vui cứu độ cho toàn nhân loại. Đọc Lời Chúa giúp khuôn mặt con luôn tươi vui và đem lại nụ cười cho mọi người xung quanh.",
-            actionText: "Con lan tỏa niềm vui của Lời Chúa đến mọi người"
+            title: "LỜI NGUYỆN",
+            icon: "🙏",
+            subtext: "Cầu nguyện tạ ơn hoan lạc",
+            message: "Dâng lời nguyện ngợi khen và tạ ơn Thiên Chúa vì niềm vui cứu độ sắp đến gần.",
+            reflection: "Lời nguyện tạ ơn đem lại niềm hoan lạc và bình an cho tâm hồn. Khi con cầu nguyện với lòng biết ơn, niềm vui Giáng Sinh sẽ lan tỏa đến mọi người xung quanh.",
+            actionText: "Con hân hoan dâng lời nguyện tạ ơn"
           },
           {
             id: 'charity',
@@ -293,12 +508,12 @@ class FaithJourney {
           },
           {
             id: 'word',
-            title: "LỜI CHÚA",
-            icon: "📖",
-            subtext: "Mầu Nhiệm Nhập Thể",
-            message: "Lắng nghe lời thiên sứ truyền tin và lời hứa cứu độ được hoàn tất nơi Hài Nhi Giêsu.",
-            reflection: "“Thánh Thần sẽ ngự xuống trên bà, và quyền năng Đấng Tối Cao sẽ rợp bóng trên bà.” (Lc 1:35). Lời Chúa thắp sáng niềm hy vọng chan chứa cho nhân loại.",
-            actionText: "Con mở rộng lòng đón Chúa ngự vào tâm hồn"
+            title: "LỜI NGUYỆN",
+            icon: "🙏",
+            subtext: "Cầu nguyện dọn lòng đón Chúa",
+            message: "Dâng lời nguyện tha thiết dọn máng cỏ lòng mình thật ấm áp để đón Chúa Hài Đồng ngự vào.",
+            reflection: "“Lạy Chúa Giêsu, xin hãy ngự đến trong lòng con.” Lời nguyện đơn sơ nhưng chân thành biến tâm hồn con thành máng cỏ ấm êm đầy ắp tình yêu đón Đấng Cứu Thế ra đời.",
+            actionText: "Con dâng lời nguyện dọn máng cỏ lòng đón Chúa"
           },
           {
             id: 'card',
@@ -307,7 +522,7 @@ class FaithJourney {
             subtext: "Thêm tên & Popup gửi thiệp chúc lành",
             message: "Viết thiệp Giáng Sinh trao gửi lời cầu chúc yêu thương đến cha mẹ, bạn bè và người thân!",
             reflection: "Một cánh thiệp Giáng Sinh tự tay con thêm tên người nhận mang theo muôn ân phúc và sự ấm áp trong mùa đông Giáng Sinh.",
-            actionText: "Bấm để Mở Thiệp & Thêm Tên Chúc Mừng ✨"
+            actionText: "Bấm để Mở Thiệp & Chọn Hình Nền ✨"
           }
         ]
       }
@@ -358,6 +573,8 @@ class FaithJourney {
     this.initPrayerTriggers();
     this.updateNativityPuzzleUI();
     this.updateProgressUI();
+    this.renderCardBgPicker();
+    this.applyCardBackground();
   }
 
   async loadAllTaskMedia() {
@@ -628,6 +845,7 @@ class FaithJourney {
     weekData.tasks.forEach((task, taskIdx) => {
       const isDone = this.completedStarTasks[weekIndex][taskIdx];
       const isCardTask = task.id === 'card';
+      const isWordTask = task.id === 'word';
       const key = `${weekIndex}_${taskIdx}`;
       const media = this.taskMedia[key];
 
@@ -641,7 +859,7 @@ class FaithJourney {
               <div class="flex items-center gap-1.5">
                 ${isDone 
                   ? '<span class="text-xs font-black px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">✓ ĐÃ LÀM</span>' 
-                  : (isCardTask ? '<span class="text-xs font-black px-3 py-1 rounded-full bg-rose-100 text-rose-800 border border-rose-300 animate-pulse">💌 CÓ POPUP</span>' : '<span class="text-xs font-black px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300">CHƯA LÀM</span>')}
+                  : (isCardTask ? '<span class="text-xs font-black px-3 py-1 rounded-full bg-rose-100 text-rose-800 border border-rose-300 animate-pulse">💌 CÓ POPUP</span>' : (isWordTask ? '<span class="text-xs font-black px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 animate-pulse">🙏 CẦU NGUYỆN</span>' : '<span class="text-xs font-black px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300">CHƯA LÀM</span>'))}
               </div>
             </div>
 
@@ -670,8 +888,8 @@ class FaithJourney {
           </div>
 
           <div class="pt-4 border-t border-amber-100 mt-2">
-            <button class="${isDone ? 'm3-kids-btn-tonal bg-emerald-100 text-emerald-900 border-emerald-300' : (isCardTask ? 'm3-kids-btn-primary' : 'm3-kids-btn-tonal')} w-full py-2.5 text-xs sm:text-sm font-black">
-              ${isDone ? '✓ ĐÃ HOÀN THÀNH' : (isCardTask ? '✨ MỞ THIỆP & THÊM TÊN' : '👉 BẤM ĐỂ HOÀN THÀNH')}
+            <button class="${isDone ? 'm3-kids-btn-tonal bg-emerald-100 text-emerald-900 border-emerald-300' : (isCardTask || isWordTask ? 'm3-kids-btn-primary' : 'm3-kids-btn-tonal')} w-full py-2.5 text-xs sm:text-sm font-black">
+              ${isDone ? '✓ ĐÃ HOÀN THÀNH' : (isCardTask ? '✨ MỞ THIỆP & THÊM TÊN' : (isWordTask ? '🙏 ĐỌC LỜI NGUYỆN' : '👉 BẤM ĐỂ HOÀN THÀNH'))}
             </button>
           </div>
 
@@ -691,6 +909,19 @@ class FaithJourney {
     // Nếu là nhiệm vụ Thiệp Giáng Sinh ở Tuần 4 -> mở popup Thiệp
     if (task.id === 'card') {
       this.openChristmasCardModal();
+      return;
+    }
+
+    // Nếu là nhiệm vụ Lời Nguyện -> mở popup Lời Nguyện
+    if (task.id === 'word') {
+      this.completedStarTasks[this.currentStarWeek][taskIdx] = true;
+      this.milestones.dailyPrayer = true;
+      this.openPrayerModal();
+      this.renderStarTasks(this.currentStarWeek);
+      this.showTaskReflection(this.currentStarWeek, taskIdx);
+      this.updateStarOfBethlehem();
+      this.updateNativityPuzzleUI();
+      this.updateProgressUI();
       return;
     }
 
@@ -831,7 +1062,7 @@ class FaithJourney {
     }
   }
 
-  // --- POPUP THIỆP GIÁNG SINH (Tuần 4) ---
+  // --- POPUP THIỆP GIÁNG SINH (Tuần 4) & TÙY CHỌN HÌNH NỀN THIEP-POP-UP ---
 
   openChristmasCardModal() {
     const modal = document.getElementById('christmas-card-modal');
@@ -847,6 +1078,9 @@ class FaithJourney {
     }
     this.updateCardRecipient(this.cardRecipientName);
 
+    this.renderCardBgPicker();
+    this.applyCardBackground();
+
     modal.classList.remove('hidden');
     modal.classList.add('flex');
   }
@@ -859,8 +1093,179 @@ class FaithJourney {
     }
   }
 
+  renderCardBgPicker() {
+    const container = document.getElementById('card-bg-picker-container');
+    if (!container) return;
+
+    container.innerHTML = this.cardBackgrounds.map(bg => {
+      const isSelected = bg.id === this.selectedCardBgId;
+      const activeClasses = isSelected
+        ? 'ring-4 ring-amber-500 ring-offset-2 border-amber-500 scale-105 shadow-md bg-amber-100/90 font-black'
+        : 'border-amber-200 hover:border-amber-400 hover:scale-102 bg-white opacity-85 hover:opacity-100';
+
+      const thumbImg = bg.image 
+        ? `<img src="${bg.image}" alt="${bg.name}" class="w-full h-11 sm:h-13 object-cover rounded-lg mb-1 group-hover:scale-105 transition-transform duration-300">`
+        : `<div class="w-full h-11 sm:h-13 bg-gradient-to-tr from-amber-100 to-yellow-50 border border-amber-200 rounded-lg flex items-center justify-center text-lg mb-1 group-hover:scale-105 transition-transform">📜</div>`;
+
+      return `
+        <button type="button" 
+                onclick="window.faithJourney.selectCardBackground('${bg.id}')"
+                class="group relative flex flex-col items-center p-1.5 rounded-xl border-2 transition-all duration-200 cursor-pointer ${activeClasses}"
+                title="${bg.name}: ${bg.title}">
+          ${thumbImg}
+          <span class="text-[10px] sm:text-[11px] font-black truncate max-w-full text-slate-800 leading-tight">
+            ${bg.name}
+          </span>
+          ${isSelected ? '<span class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-amber-500 text-white rounded-full text-[11px] font-black flex items-center justify-center shadow-md animate-pulse">✓</span>' : ''}
+        </button>
+      `;
+    }).join('');
+
+    const titleEl = document.getElementById('card-bg-selected-title');
+    if (titleEl) {
+      const currentBg = this.cardBackgrounds.find(b => b.id === this.selectedCardBgId) || this.cardBackgrounds[0];
+      titleEl.textContent = `${currentBg.name} - ${currentBg.title}`;
+    }
+  }
+
+  selectCardBackground(bgId) {
+    this.selectedCardBgId = bgId;
+    try {
+      localStorage.setItem('christmas_card_bg', bgId);
+    } catch (e) {}
+
+    if (window.sacredAudio) {
+      window.sacredAudio.playChime('bell');
+    }
+
+    this.applyCardBackground();
+    this.renderCardBgPicker();
+  }
+
+  applyCardBackground() {
+    const printArea = document.getElementById('christmas-card-print-area');
+    if (!printArea) return;
+
+    const currentBg = this.cardBackgrounds.find(b => b.id === this.selectedCardBgId) || this.cardBackgrounds[0];
+    const quoteEl = document.getElementById('card-preview-quote');
+    if (quoteEl && currentBg.quote) {
+      quoteEl.textContent = currentBg.quote;
+    }
+
+    if (currentBg.image) {
+      printArea.style.backgroundImage = `url('${currentBg.image}')`;
+      printArea.style.backgroundSize = 'cover';
+      printArea.style.backgroundPosition = 'center';
+      printArea.classList.remove('bg-[#fffef7]');
+    } else {
+      printArea.style.backgroundImage = 'none';
+      printArea.style.backgroundColor = '#fffef7';
+      printArea.classList.add('bg-[#fffef7]');
+    }
+
+    this.updateCardLayoutUI();
+  }
+
+  toggleCardLayoutStyle() {
+    this.cardLayoutStyle = (this.cardLayoutStyle === 'standard') ? 'fullscreen' : 'standard';
+    try {
+      localStorage.setItem('christmas_card_layout', this.cardLayoutStyle);
+    } catch (e) {}
+
+    if (window.sacredAudio) {
+      window.sacredAudio.playChime('bell');
+    }
+
+    this.updateCardLayoutUI();
+  }
+
+  updateCardLayoutUI() {
+    const overlay = document.getElementById('card-content-overlay');
+    const toggleBtn = document.getElementById('card-layout-toggle-btn');
+    const currentBg = this.cardBackgrounds.find(b => b.id === this.selectedCardBgId) || this.cardBackgrounds[0];
+    const isImageBg = Boolean(currentBg.image);
+
+    if (toggleBtn) {
+      toggleBtn.style.display = isImageBg ? 'inline-flex' : 'none';
+      toggleBtn.innerHTML = this.cardLayoutStyle === 'fullscreen'
+        ? '<span>📜 Xem Kiểu Khung Lời Chúc</span>'
+        : '<span>🎨 Xem Tranh Toàn Cảnh</span>';
+    }
+
+    if (!overlay) return;
+
+    if (this.cardLayoutStyle === 'fullscreen' && isImageBg) {
+      // Kiểu toàn cảnh: Lớp phủ thu nhỏ xuống dưới đáy để lộ trọn vẹn bức tranh Hang Đá
+      overlay.className = 'relative z-10 mt-auto bg-black/70 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-amber-300/60 shadow-xl text-white transition-all duration-500';
+      const heading = overlay.querySelector('h4');
+      if (heading) heading.className = 'text-base sm:text-lg font-black text-amber-300 uppercase tracking-tight mb-1';
+      const nameBox = overlay.querySelector('#card-preview-name-container');
+      if (nameBox) nameBox.className = 'my-1.5 py-1 px-3 border border-amber-400/60 bg-amber-950/50 rounded-xl';
+      const quote = overlay.querySelector('#card-preview-quote');
+      if (quote) quote.className = 'text-xs sm:text-sm font-serif italic text-amber-200 font-bold mb-1 leading-snug';
+      const msg = overlay.querySelector('#card-preview-msg');
+      if (msg) msg.className = 'text-[11px] sm:text-xs text-amber-100 font-medium leading-relaxed mb-1.5';
+      const nameText = overlay.querySelector('#card-preview-name');
+      if (nameText) nameText.className = 'text-lg sm:text-xl font-black text-amber-300 font-serif italic';
+    } else {
+      // Kiểu tiêu chuẩn: Khung thư mờ bán trong suốt ấm áp
+      overlay.className = 'relative z-10 bg-white/85 sm:bg-white/80 backdrop-blur-[2px] rounded-2xl p-4 sm:p-6 border-2 border-amber-300/80 shadow-lg text-slate-900 transition-all duration-500';
+      const heading = overlay.querySelector('h4');
+      if (heading) heading.className = 'text-2xl sm:text-3xl font-black text-amber-800 uppercase tracking-tight mb-2 drop-shadow-xs';
+      const nameBox = overlay.querySelector('#card-preview-name-container');
+      if (nameBox) nameBox.className = 'my-3 py-2 px-3 border-2 border-dashed border-amber-400/80 bg-gradient-to-r from-amber-50/90 via-orange-50/90 to-amber-50/90 rounded-2xl shadow-inner';
+      const quote = overlay.querySelector('#card-preview-quote');
+      if (quote) quote.className = 'text-sm sm:text-base font-serif italic text-amber-950 font-black mb-2 leading-relaxed drop-shadow-2xs';
+      const msg = overlay.querySelector('#card-preview-msg');
+      if (msg) msg.className = 'text-xs sm:text-sm text-slate-800 font-extrabold leading-relaxed mb-3';
+      const nameText = overlay.querySelector('#card-preview-name');
+      if (nameText) nameText.className = 'text-2xl sm:text-3xl font-black text-rose-700 font-serif italic py-0.5 break-words drop-shadow-xs';
+    }
+  }
+
+  viewCurrentCardArtwork() {
+    const currentBg = this.cardBackgrounds.find(b => b.id === this.selectedCardBgId) || this.cardBackgrounds[0];
+    if (!currentBg.image) {
+      alert('Mẫu thiệp này dùng hoa văn giấy sáng mặc định.');
+      return;
+    }
+
+    const modal = document.getElementById('task-media-viewer-modal');
+    const titleEl = document.getElementById('media-viewer-title');
+    const contentEl = document.getElementById('media-viewer-content');
+    const timeEl = document.getElementById('media-viewer-time');
+    const downloadBtn = document.getElementById('media-viewer-download');
+
+    if (titleEl) {
+      titleEl.innerHTML = `<span>🎨</span> <span>Hình Nền Thiệp: ${currentBg.name} – ${currentBg.title}</span>`;
+    }
+    if (timeEl) {
+      timeEl.textContent = `Thư mục Thiep-pop-up • ${currentBg.quote}`;
+    }
+    if (downloadBtn) {
+      downloadBtn.href = currentBg.image;
+      downloadBtn.download = `${currentBg.name}.jpg`;
+    }
+    if (contentEl) {
+      contentEl.innerHTML = `
+        <div class="flex flex-col items-center p-2">
+          <img src="${currentBg.image}" alt="${currentBg.name}" class="max-h-[68vh] max-w-full rounded-2xl shadow-2xl mx-auto border-2 border-amber-300 object-contain">
+          <p class="mt-3 text-xs sm:text-sm font-black text-amber-900 bg-amber-100/90 px-4 py-1.5 rounded-full border border-amber-300 shadow-sm">${currentBg.quote}</p>
+        </div>
+      `;
+    }
+
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
   updateCardRecipient(name) {
     this.cardRecipientName = name.trim() || 'Gia Đình Thân Yêu';
+    try {
+      localStorage.setItem('christmas_card_recipient', this.cardRecipientName);
+    } catch (e) {}
     const preview = document.getElementById('card-preview-name');
     if (preview) {
       preview.textContent = this.cardRecipientName;
@@ -1100,64 +1505,7 @@ class FaithJourney {
     }
   }
 
-  // --- LÁ THƯ GỬI CHÚA HÀI ĐỒNG ---
 
-  sendLetter(event) {
-    this.milestones.letterOffered = true;
-
-    if (window.sacredAudio) {
-      window.sacredAudio.playChime('blessing');
-    }
-
-    const parchment = document.getElementById('parchment-letter-wrapper');
-    if (parchment) {
-      parchment.style.transition = 'all 1.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
-      parchment.style.transform = 'translateY(-100px) scale(0.9)';
-      parchment.style.opacity = '0';
-      parchment.style.filter = 'blur(6px) brightness(1.3)';
-    }
-
-    if (window.celestialSky && event) {
-      window.celestialSky.addStardustBurst(window.innerWidth / 2, window.innerHeight * 0.5, 50);
-    }
-
-    setTimeout(() => {
-      const container = document.getElementById('letter-sent-container');
-      if (container) {
-        container.classList.remove('hidden');
-        container.innerHTML = `
-          <div class="p-8 rounded-3xl bg-gradient-to-b from-amber-50 via-white to-sky-50 border-3 border-amber-400 text-center max-w-2xl mx-auto animate-fade-in shadow-2xl">
-            <div class="text-5xl mb-4 animate-bounce">🕊️ 💌 ❤️</div>
-            <h3 class="text-3xl text-amber-800 font-black mb-3">Lá Thư Của Con Đã Được Trao Vào Tay Chúa</h3>
-            <p class="text-xl font-black text-slate-800 mb-6 leading-relaxed">
-              “Con không phải gánh vác mọi sự một mình.<br/>Hãy đặt trọn trái tim bé nhỏ vào đôi tay Chúa.”
-            </p>
-            <p class="text-slate-700 font-bold text-base mb-6 leading-relaxed">
-              Chúa Giêsu đã đọc từng dòng chữ chân thành của con. Người mỉm cười chúc lành và ôm lấy con trong tình yêu dịu êm của Ngài.
-            </p>
-            <button onclick="window.faithJourney.resetLetter()" class="m3-kids-btn-tonal text-xs font-black">
-              ✍️ Viết Thư Mới Cho Chúa
-            </button>
-          </div>
-        `;
-      }
-    }, 1200);
-
-    this.updateProgressUI();
-  }
-
-  resetLetter() {
-    const parchment = document.getElementById('parchment-letter-wrapper');
-    const container = document.getElementById('letter-sent-container');
-    if (parchment) {
-      parchment.style.transform = 'none';
-      parchment.style.opacity = '1';
-      parchment.style.filter = 'none';
-    }
-    if (container) {
-      container.classList.add('hidden');
-    }
-  }
 
   // --- HANG ĐÁ BÊLEM & CHÚC LÀNH ---
 
@@ -1207,15 +1555,14 @@ class FaithJourney {
     const litAdvent = this.milestones.advent.filter(Boolean).length;
     score += litAdvent * 5;
 
-    // 12 nhiệm vụ Dõi Theo Ánh Sao (4 tuần x 3 nhiệm vụ) = max 45%
+    // 12 nhiệm vụ Dõi Theo Ánh Sao (4 tuần x 3 nhiệm vụ) = max 50%
     let completedStarCount = 0;
     for (let w = 0; w < 4; w++) {
       completedStarCount += this.completedStarTasks[w].filter(Boolean).length;
     }
-    score += Math.round((completedStarCount / 12) * 45);
+    score += Math.round((completedStarCount / 12) * 50);
 
-    if (this.milestones.letterOffered) score += 15;
-    if (this.milestones.nativityAdored) score += 10;
+    if (this.milestones.nativityAdored) score += 20;
     if (this.milestones.dailyPrayer) score += 5;
 
     score = Math.min(100, Math.round(score));
@@ -1325,6 +1672,10 @@ class FaithJourney {
 
     if (titleEl) titleEl.textContent = prayer.periodName;
     if (contentEl) contentEl.textContent = prayer.content;
+    const dayBadge = document.getElementById('prayer-modal-day-badge');
+    if (dayBadge && prayer) {
+      dayBadge.textContent = prayer.theme ? `${prayer.theme} • Bài #${this.currentPrayerIndex + 1}` : `Bài #${this.currentPrayerIndex + 1}`;
+    }
 
     this.isPrayerModalOpen = true;
     modal.classList.remove('hidden');
@@ -1443,6 +1794,10 @@ class FaithJourney {
     const contentEl = document.getElementById('prayer-modal-content');
     if (titleEl) titleEl.textContent = prayer.periodName;
     if (contentEl) contentEl.textContent = prayer.content;
+    const dayBadge = document.getElementById('prayer-modal-day-badge');
+    if (dayBadge && prayer) {
+      dayBadge.textContent = prayer.theme ? `${prayer.theme} • Bài #${this.currentPrayerIndex + 1}` : `Bài #${this.currentPrayerIndex + 1}`;
+    }
 
     // Khởi động lại đếm ngược nếu bảng đang mở
     if (this.isPrayerModalOpen) {
